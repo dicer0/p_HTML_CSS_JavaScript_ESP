@@ -1,0 +1,875 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=News+Cycle|Open+Sans+Condensed:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Anton|Lobster');
+@import url('https://fonts.googleapis.com/css?family=Gayathri:100,400&display=swap');
+
+/*PESUDOELEMENTOS ::BEFORE Y AFTER::
+Estos pueden ser aplicados a cualquier elemento html que tenga apretura y cierre ya sea un class, id, p, a, div, etc.
+La etiqueta a la que se esté aplicando el pseudo element debe tener etiquetas de apertura y cierre como: <a></a> 
+porque lo que yo ponga en la etiqueta content: aparecerá antes o después del contenido que esté dentro de esas 
+etiquetas, además puedpo hacer uso de la instrucción display: block; si quiero que se coloque en un solo renglón 
+aparte, puedo usar display: flex; si quiero acomodarlo en un punto en específico o puedo no poner nada y lo que haya
+en content se acomodará antes o después del contenido pero en el mismo renglón*/
+body{/*Esto se usa solo para que el body no haya espacios entre los divs que ponga en el documento html y el body*/
+    margin: 0px;
+    padding: 0px;
+}
+/*PONER TEXTO O IMAGENES COMO PSEUDOELEMENTO*/
+/*Este es un id cualquiera aplicado a uno de mis divs*/
+#texto_Imagen{
+    padding-top: 3%;
+    height: 350px;
+    width: 100%; 
+    background-color: tomato;
+    color: white; 
+    font-size: 40px; 
+    font-family: 'Gayathri', sans-serif; 
+    font-weight: 100;
+}
+/*El pseudoelemento before se puede aplicar a cualquier id o class de mis divs*/
+#texto_Imagen::before{
+    /*Con la instrucción content: se describe lo que mostrará el pseudoelemento, si no hay nada en esta instrucción
+    o la sintrucción no existe es como si no existiera el pseudoele*/
+    content: 'pesudo Before con texto';
+    /*Con esta instrucción aparecerá un texto antes del contenido del div que esté usando el id="texto_Imagen", este texto 
+    no podrá ser seleccionado porque es un pseudoelemento*/
+    width: 20%;
+    height: 5vh;
+    font-size: 20px;
+    background-color: crimson;
+    color: skyblue;
+    /*Como no hay display: block; el content aparecerá antes de lo que haya dentro del div, pero sobre la misma fila*/
+}
+#texto_Imagen::after{
+    content: url(img/oli.png);
+    /*Con esta instrucción aparecerá una imagen antes del contenido del div que esté usando el id="texto_Imagen"*/
+    width: 50%;
+    height: 30vh;/*Con las imágenes no sirve poner width y height, la imagen saldrá en su tamaño original*/
+    display: block;
+    /*Con esta instrucción hago que el texto aparezca antes que el contenido del div en una fila, pero para que esto 
+    pueda organizarse, el pseudo ya debe tener definido su ancho y altura*/
+    background-color: black;
+}
+
+
+
+
+/*PONER COMILLAS DOBLES COMO PSEUDOELEMENTO*/
+/*Este es otro id cualquiera aplicado a uno de mis divs*/
+#comillasDobles{
+    margin-left: 0%;
+    /*Esto quita el margen de la izquierda que se crea por default en los elementos blockquote*/
+    width: 100%;
+    height: 50px; 
+    color: whitesmoke; 
+    background-color: rgb(255, 163, 147);
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    font-size: 25px; 
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-family: 'News Cycle', sans-serif;
+}
+#comillasDobles::before{
+    /*Con esta instrucción aparecerán comillas dobles de apertura antes de lo que haya en mi div*/
+    content: open-quote;
+    /*Y les puedo dar la apariencia que sea*/
+    font-size: 50px;
+    color: red;
+}
+#comillasDobles::after{
+    /*Con esta instrucción aparecerán comillas dobles de cierre después de lo que haya en mi div*/
+    content: close-quote;
+    /*Y les puedo dar la apariencia que sea*/
+    font-size: 100px;
+    color: black;
+}
+
+
+
+
+/*HACER QUE APAREZCA UN MENSAJE HOVER COMO PSEUDOELEMENTO, para ello se usa mucho:*/
+/*POSITION de CSS sirve para colocar un div o elemento y sus parámetros son los siguientes:
+    - static: Es el modo default y acomoda los elementos dependiendo del órden en el que estén creados en el documento 
+    HTML, metíendolos en un flujo de documentos (document flow) sin que éstos se puedan poner uno encima de otro, además
+    hace que ocupen la fila completa
+    
+    - relative: Funciona de la misma forma que static, pero permite mover el elemento empujándolo desde arriba, abajo, 
+    derecha o izquierda desde el punto donde se creó, siguiendo el órden en el que fue creado en el documento HTML, 
+    cuando yo haga esto, podré posicionar este elemento sobre los otros ya que éste no obedece el órden del document 
+    flow mientras que los demás elementos si lo hacen, además hace que los elementos también ocupen la fila completa.
+    El elemento que tenga este valor se tomará como punto de referencia para los elementos que sean posotion:absolute, 
+    esto implica que los elementos que tengan position:absolute se crearán encima de éste y lo tomarán como referencia 
+
+    - absolute: Funciona de la misma forma que relative permitiendo mover el elemento empujándolo desde arriba, abajo, 
+    derecha o izquierda desde el punto donde se creó, pero la diferencia con relative es que los demás elementos actuarán
+    como si éste nunca hubiera sido creado en el órden como se acomodaron los elementos siguiendo el document flow, por 
+    lo que encimarán en él, además hace que el elemento absolute solo ocupe el espacio que necesita su contenido y no la 
+    fila completa.
+    Los elementos que sean position:absolute se acomodarán respecto a otro elemento que tenga un position:relative, esto 
+    implica que su punto de inicio desde donde lo puedo empujar hcon top, bottom, left y right es la esquina superior 
+    izquierda del elemento que tenga  position:relative, si ningún elemento es relative, se acomodará respecto al body
+    
+    - fixed: Es parecido a absolute pero el elemento siempre se acomoda respecto al body, osea a la pantalla del navegador
+    
+    - sticky: El elemento te sigue a donde vayas después de que toque el punto de hasta arriba de la pantalla, se usa 
+    mucho para navbars
+    
+    Ya que haya elegido uno, puedo mover el elemento con las instrucciones top, bottom, left o right*/
+.mensajeHoverPuntoMedio{
+    color: #f7931a; 
+    font-weight: bold; 
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    /*Este elemento relative se tomará como referencia para uno posterior que sea tipo absolute*/
+}
+/*TRANSFORM de CSS sirve para hacer que un elemento crezca o se encoja, rote o se deforme, esto se usa para 
+realizar efectos y sus parámetros son los siguientes:
+-scale(): Hace que el elemento se encoja cuando le pongo un número decimal o que hasta desaparezca si le meto un cero o 
+que el elemento crezca cuando le pongo un número mayor a 1, si pongo 1 regresará a su tamaño original
+
+-scaleX(): Hace que el elemento se encoja o crezca pero solo horizontalmente
+
+-scaleX(): Hace que el elemento se encoja o crezca pero solo horizontalmente
+
+-translate(x,y): Sirve para hacer las dos instrucciones anteriores a la vez
+
+-rotate(): Hace que el elemento rote el número de grados que ponga dentro de su paréntesis indicado con la palabra 
+reservada deg
+
+-skew(): Hace que el elemento se deforme de manera rotacional como si lo rotara mientras está sujeto de sus lados e 
+igualmente se hace metiendo cuántos grados rotará el elemento dentro de su paréntesis con la palabra reservada deg*/
+
+/*TRANSITION de CSS sirve para que un hover se ejecute, la insrucción transition se mete dentro del elemento principal 
+no dentro del hover, las propiedades de transition las puedo especificar todas de jalón de la siguiente manera:
+    transition: property    duration    transition-timing-function  delay;
+
+-property: puedo hacer que transition se aplique a todos los aspectos de mi elemento con la palabra reservada all o que
+solo se aplique a algunas, propiedades como background-image y background-size no se pueden manejar así pero otras como 
+border, width o height si
+
+-duration: Sirve para indicar el tiempo que quiero que dure la transición
+
+-transition-timing-function sirve para indicar la manera en la que quiero que se haga la transición:
+    ease: Especifica un efecto de transición con un inicio lento, luego rápido, luego finaliza lentamente 
+    (este es el modo predeterminado).
+    linear: Especifica un efecto de transición con la misma velocidad de principio a fin.
+    ease-in: Especifica un efecto de transición con un inicio lento solamente.
+    ease-out: Especifica un efecto de transición con un final lento solamente.
+    ease-in-out: Especifica un efecto de transición con un inicio y un final lentos.
+
+-delay: sirve para indicar cuanto tiempo debe estar el mouse encima del elemento para que se active el efecto
+
+No se deben especificar todas las propiedades a fuerza, algunas se pueden dejar vacías y no pasa nada, además se pueden
+tener varias transition a elementos diferentes dentro de la misma instrucción solo las debo separar por comas entre sí:
+    transition: 
+        property1    duration    transition-timing-function  delay, 
+        property2    duration    transition-timing-function  delay;
+*/
+/*ESTE EFECTO HARÁ QUE EL ELEMENTO APAREZCA DESDE SU PUNTO MEDIO*/
+.mensajeHoverPuntoMedio::before{
+    content: 'oli prro';/*El contenido del pseudoelemento es un texto*/
+    text-align: center;
+    height: 5vh;
+    width: 5vw;
+    background-color: rgba(136, 117, 117, 0.678);/*El texto tendrá un color transparente*/
+    padding: 1%;/*tendra un padding*/
+    color: whitesmoke;
+    border-radius: 5px;/*tiene redondeo en las esquinas*/
+    font-size: 15px;
+    display: block;/*el contenido estará en su propia fila individual antes del contenido*/
+    position: absolute;/*se acomodará respecto al elemento original que tiene un position relative*/
+    top: -50px;
+    left: 40%;/*Con top, bottom, left o right muevo el elemento a donde yo quiera, para que aparezca en un punto*/
+    transform: scale(0);/*Con esto hago que el elemento no aparezca*/
+    /*Hago que el elemento no aparezca porque no siempre quiero que esté ahí, solamente cuando pase el mouse encima 
+    de él*/
+    transition: transform ease-in-out 150ms;
+    /*Con este transition hago que solamente se vea afectado al aspecto transform, que tenga una transición lenta 
+    al inicio y lenta al final y que el proceso ocurra después de haber tenido el mouse 150 milisegundos sobre 
+    el elemento que tenga la class="mensajeHover"*/
+}
+/*Si quiero hacer que mi pseudoelemento aparezca con un hover, debo indicarlo poniendo :hover::pseudoelemento*/
+.mensajeHoverPuntoMedio:hover::before{
+    transform: scale(1);
+}
+
+/*ESTE EFECTO HARÁ QUE EL ELEMENTO APAREZCA DE ABAJO HACIA ARRIBA*/
+.mensajeHoverDesdeAbajo{
+    color: tomato; 
+    font-weight: bold; 
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    /*Este elemento relative se tomará como referencia para uno posterior que sea tipo absolute*/
+}
+.mensajeHoverDesdeAbajo::before{
+    content: 'oli prro X2';/*El contenido del pseudoelemento es un texto*/
+    text-align: center;
+    height: 5vh;
+    width: 5vw;
+    background-color: rgba(255, 140, 73, 0.548);/*El texto tendrá un color transparente*/
+    padding: 1%;/*tendra un padding*/
+    color: black;
+    border-radius: 5px;/*tiene redondeo en las esquinas*/
+    font-size: 15px;
+    display: block;/*el contenido estará en su propia fila individual antes del contenido*/
+    position: absolute;/*se acomodará respecto al elemento que tenga un position relative*/
+    top: 0px;
+    left: 40%;/*Con top, bottom, left o right muevo el elemento para que inicialmente esté abajo*/
+    transform: scale(0);/*Con esto hago que el elemento no aparezca*/
+    /*Hago que el elemento no aparezca porque no siempre quiero que esté ahí, solamente cuando pase el mouse encima 
+    de él*/
+    transition: 
+        transform ease-in-out 150ms,
+        top ease-out 150ms;
+    /*Con esta transition doble hago que se vean afectados el transform y el top, transform en específico tendrá una 
+    transición lenta al inicio y lenta al final y el proceso ocirrirá 150 milisegundos después de haber tenido el mouse
+    sobre el elemento, top tendrá una transición lenta solo al final y también será ejecutado después de 150ms que tenga 
+    el mouse sobre el elemento con la class="mensajeHover"*/
+}
+/*Si quiero hacer que mi pseudoelemento aparezca con un hover, debo indicarlo poniendo :hover::pseudoelemento*/
+.mensajeHoverDesdeAbajo:hover::before{
+    transform: scale(1);/*Con esto hago que el elemento no aparezca a su tamaño original*/
+    top: -50px;/*Con esta instrucción hago que el elemento vaya desde su punto más bajo hacia arriba*/
+}
+
+
+
+
+/*USAR PSEUDOELEMENTOS ::BEFORE Y ::AFTER COMO HERRAMIENTAS DE DISEÑO PARA TITULOS*/
+/*DISPLAY: Sirve para que mi elemento creado se acomode de cierta forma, o que los divs o cualquier contenido que estén 
+dentro de mi elemento se acomoden de cierta forma, sus parámetros son:
+-none: Hace que el elemento desaparezca con todo y su contenido.
+
+-block: Hace que mi elemento se vaya a una fila propia y que la ocupe toda, esto implica que ocupará todo el ancho de la 
+pantalla, el elemento ocupará una fila de arriba o abajo dependiendo del órden en el que fue declarado dentro del 
+documento HTML, los div son display:block por default y manualmente puedo indicar el ancho(width) y alto(height) del 
+elemento.
+
+-inline: Hace que el elemento ocupe el mínimo espacio posible, esto implica que aparecerá en la misma línea que los demás
+elementos que existan antes o después de él declarados en el documento HTML, solo ocupará el espacio que necesite y no 
+podré manualmente indicarle cuál es el ancho o alto de mi elemento, si lo hago me ingonorará y pondrá el mínimo posible.
+Otra cosa importante del elemento inline es que cuando ya no quepa en una misma línea, el cacho que no cupo solo se irá 
+a la siguiente fila
+
+-inline-block: Se comporta igual que los elementos tipo inline pero con inline-block si podré manualmente indicar cuál 
+quiero que sea el ancho o alto de mi elemento
+
+-flex: Me permite utilizar las herramientas de flex-box para acomodar como yo quiera los elementos que estén dentro*/
+#estiloTitulo{
+    /*Esto de abajo no importa, es solo el estilo del div*/
+    color: orangered;
+    font-size: 60px; 
+    font-family: 'Gayathri', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    height: 8vh;
+    /*La unidad vh hace que el elemento ocupe 1% de la altura de la pantalla por cada 1 vh*/
+    /*Esto de arriba no importa, es solo el estilo del div*/
+    display: inline-block;
+    /*Mi elemento ocupará el mínino espacio posible en la fila, osea en el ancho de la pantalla, pero podré indicar
+    su tamaño manualmente*/
+    position: relative;
+    /*Se pone position: relative para que el elemento posterior lo tome como referencia a este*/
+
+    /*Z-INDEX: Sirve para acomodar mis elementos uno encima de otro, pero esto se puede volver un problema porque 
+    cuando pongo algunos elementos como position:relative, esto forza a que este elemento se convierta en la 
+    posición cero, osea z-index:0, esto implica que debo acomodar los demás elementos sabiendo esto*/
+    /*Cuando pasa esto es mejor poner directamente la posición cero al elemento que esté usando la position relative*/
+    z-index: 0;
+}
+/*El pseudoelemento before será el fondo del título*/
+#estiloTitulo::before{
+    /*Como el elemento principal es display:inline-block; los pseudoelementos before y after solo ocuparán el espacio que 
+    esté ocupando el texto en el ancho de la pantalla*/
+    content: '';
+    /*Es importante recordar que siempre debe existir un content aunque se encuentre vacío sino no funcionará el 
+    pseudoelemento*/
+    height: 101%;/*Con height: 100% hago que el pseudoelemento ocupe el 100% de la altura del elemento principal*/
+    /*Se pone 101% porque pasa algo raro en algunos navegadores que el fondo no alcanza a cubrir toda la línea*/
+    display: block;/*Esto hará que cada pseudoelemento ocupe todo el espacio de una fila*/
+    position: absolute;/*Y como es absolute se podrá poner encima de otros elementos*/
+    /*El pseudoelemento toma como referencia al elemento original, por eso este debe ser position absolute y el elemento 
+    original debe ser position relative*/
+    /*A este elemento no se le debe dar un width, se debe hacer el ancho con left y right*/
+    left: -20px;
+    right: -20px;
+    /*Los valores negativos hace que este div se salga 20 pixeles a la izquiera y a la derecha respecto al elemento 
+    principal y esto se hace para darle un tipo padding al título*/
+    background-color: whitesmoke;
+    z-index: -1;
+    /*Esto hace que este elemento se posicione atrás del principal*/
+}
+/*El pseudoelemento after será la franja atrás del título*/
+#estiloTitulo::after{
+    content: '';
+    /*Es importante recordar que siempre debe existir un content aunque se encuentre vacío sino no funcionará el 
+    pseudoelemento*/
+    height: 100%;
+    /*Con height: 100% hago que el pseudoelemento ocupe el 100% de la altura del elemento principal, esto solo se puede
+    hacer con pseudoelementos*/
+    display: block;/*Esto hará que cada pseudoelemento ocupe todo el espacio de una fila*/
+    position: absolute;/*Y como es absolute se podrá poner encima de otros elementos*/
+    /*El pseudoelemento toma como referencia al elemento original, por eso este debe ser position absolute y el elemento 
+    original debe ser position relative*/
+    width: 100vw;
+    /*La unidad vw hace que el elemento ocupe 1% del ancho de la pantalla por cada 1 vw, por lo tanto 100vw hace que el 
+    pseudoelemento ocupe toda la pantalla*/
+    left: 50%;
+    top: 0%;
+    /*Con esta instrucción lo que hago es que la esquina izquierda de este elemento se mueva justo a la mitad del 
+    elemento principal y su parte de arriba esté pegada al elemento principal*/
+    transform: translateX(-50%);
+    /*Con esta instrucción muevo todo el elemento que ocupa la pantalla completa la mitad de lo que ocupe todo su ancho 
+    y como el ancho abarca toda la pantalla, lo que pasará es que el elemento se posicionará en medio de la pantalla 
+    pero como en escencia inicia justo en la mitad de mi elemento, está forzado a empezar a formarse en ese punto*/
+    /*Combinar el uso de position: absolute, top:50% y transform: translateX() sirve para que yo pueda centrar un 
+    elemento respecto a otro que tenga position:relative y esto se puede usar para hacer botones cuyo efecto haga que 
+    su fondo salga de en medio o en este caso para que no importando que ponga yo en mi título el estilo se adapte por
+    sí solo*/
+    background-color: orangered;
+    z-index: -2;
+    /*Esto hace que este elemento se posicione atrás del pseudónimo before, que está posicionado atrás del elemento 
+    principal*/
+}
+
+
+
+
+/*EFECTO HOVER DE FONDO OBSCURO CON TEXTO ENCIMA DE UNA IMAGEN USANDO PSEUDOELEMENTOS ::BEFORE Y ::AFTER:*/
+/*Se creará un div con position:relative que contenga una etiqueta img para insertar la imagen de fondo del elemento y 
+un elemento section que se declarará como position:relative para que se pueda poner encima del elemento y muestre el 
+texto, lo que buscamos es que cuando hagamos hover, la imagen se obscurezca, el texto aparezca y se cree el efecto con 
+los pseudoelementos ::before y ::after
+Para poder este efecto haremos uso de la herencia, pero a veces es mejor no hacer uso nisiquiera de una clase hijo y todo 
+manejarlo directamente a un tipo de elemento en general contenido en mi clase*/
+/*CLASE PADRE*/
+.efectoImagenTexto{
+    /*Lo de arriba no importa porque es puro diseño del div que contiene todo el elemento donde se creará el efecto*/
+    width: 40%;/*Este es el ancho de pantalla que ocupará cada elemento*/ 
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Lo de arriba no importa porque es puro diseño del div*/
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+.efectoImagenTexto::before{
+    content: '';
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    border-top: solid white 1px;
+    border-bottom: solid white 1px;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+    z-index: -1;
+}
+.efectoImagenTexto:hover::before{
+    transform: scale(1.05, 1);
+}
+.efectoImagenTexto::after{
+    content: '';
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    border-left: solid white 1px;
+    border-right: solid white 1px;
+    transform: scale(1, 0);
+    transition: transform ease-in-out 250ms;
+    z-index: -1;
+}
+.efectoImagenTexto:hover::after{
+    transform: scale(1, 1.05);
+}
+/*ELEMENTO HIJO SECTION DENTRO DE LA CLASE PADRE*/
+.efectoImagenTexto section{
+    opacity: 0;
+    transition: opacity ease-in-out 250ms;
+}
+.efectoImagenTexto section:hover{
+    opacity: 1;
+}
+
+
+
+
+
+/*LISTADO CON DIVS, P, H1 o cualquier elemento del documento HTML: lo que hará es enumerar elementos, mas o menos como 
+lo hace la etiqueta ul y li, pero con el estilo que nosotros queramos, el listado se actualizará por si solo sin que lo 
+tengamos que hacer manualmente y para poder hacer esto debo de tener un div contenedor y dentro de este debo tener divs o 
+elementos individuales que tendrán cada uno de los elementos enlistados*/
+/*COUNTER-RESET: En el elemento contenedor debo declarar debo declarar la instrucción counter-reset y darle un nombre
+solamente, esto sirve para crear un tipo de variable que realizará el conteo cada que un elemento sea asignado a la 
+class que guarde los elementos enlistados*/
+#contador{
+    background-color: lightgrey;
+    height: 400px; 
+    width: 50%; 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    flex-direction: column; 
+    padding-left: 3%; 
+    padding-right: 3%;
+    /*En el div padre o div contenedor debo declarar el counter-reset y darle un nombre, el que yo quiera*/
+    counter-reset: elContadorAhuevoUySi;
+}
+.listado{
+    background-color: white; 
+    width: 90%;
+    color: #322f3a; 
+    font-size: 18px;
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-family: 'News Cycle', sans-serif; 
+    padding: 1%; 
+    text-align: center;
+    /*Se pone position: relative para que el elemento posterior lo tome como referencia a este*/
+    position: relative;
+}
+/*El counter-reset debe ser manejado dentro de un pseudoelemento::before usualmente ya que el índice en todos los 
+listados de elementos aparece antes del elemento en sí, además aquí es donde se da el estilo individual para mi 
+listado ya que dentro del pseudoelemento puedo darle dentro de content cualquier forma de enlistado que quiera*/
+.listado::before{
+    /*COUNTER-INCREMENT: Hace que cada que un elemento use esta class, al counter-reset llamado elContadorAhuevoUySi
+    se le aumente un 1 y así vaya enlistando los elementos por sí solo*/
+    counter-increment: elContadorAhuevoUySi;
+    /*COUNTER: Para que aparezca el contador debo incluirlo dentro de content con la sintrucción 
+    counter(nombreContador), si alado quiero poner un elemento después del número puedo poner ul() para meter una 
+    imagen o '' para meter un texto*/
+    content: counter(elContadorAhuevoUySi) '*';
+    width: 3%;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Se pone position: absolute para que este elemento se mueva tomando como referencia al elemento anterior que
+    tiene un position: relative*/
+    position: absolute;
+    left: 1%;
+    bottom: 9%;
+    /*Ahora sí se le da un estilo único al enlistado*/
+    background-color: #322f3a; 
+    border-radius: 50px;
+    color: tomato;
+    font-size: 18px; 
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-family: 'News Cycle', sans-serif; 
+    padding: 1%; 
+    border: tomato solid 2px;
+}
+
+
+
+
+/*EFECTOS HOVER DE BOTÓN ESPECIALES CON CSS*/
+/*EFECTO DONDE EL BOTÓN SE LLENA DE UN COLOR QUE SALE DESDE EN MEDIO EN FORMA HORIZONTAL, a veces tiene problemas, para 
+hacerlo sin que tenga problemas ir al botón 3*/
+#button1{
+    /*Todo esto de abajo no importa, es solo el estilo del botón*/
+    width: 50%;
+    height: 30px;
+    background-color: rgba(61, 61, 61, 0.425);
+    border: tomato solid 2px;
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-family: 'News Cycle', sans-serif;
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*Todo esto de arriba no importa, es solo el estilo del botón*/
+    position: relative;
+    /*Debe ser position relative para que el pseudoelemento posterior sea position absolute y pueda tomar a este como 
+    referencia*/
+    z-index: 0;
+    /*z-index sirve para acomodar mis elementos uno encina de otro, pero en específico cuando uso un position relative
+    debo declarar ese elemento como z-index en la posición 0 porque esto es causado por haber puesto esta position, 
+    los demás elementos ya se deberán poner con un número mayor para que estén encima o con un número negativo para
+    que se pongan debajo de éste*/
+    overflow: hidden;
+    /*Esta instrucción se pone para evitar que se vean las partes que se salgan del elemento cuando se lleve a cabo el 
+    efecto con el fondo de color, si es que esto ocurre*/
+}
+#button1::before{
+    content: '';
+    /*Es importante recordar que siempre debe existir un content aunque se encuentre vacío sino no funcionará el 
+    pseudoelemento*/
+    width: 0%;
+    height: 100%;
+    background-color: tomato;
+    /*Se pone el color del fondo e inicialmente un width de 0% para que al hacer hover el fondo aparezca horizontalmente*/
+    position: absolute;
+    /*El pseudoelemento toma como referencia al elemento original, por eso este debe ser position absolute y el elemento 
+    original debe ser position relative*/
+    top: 50%;
+    left: 50%;
+    /*El elemento está situado a la mitad del div*/
+    transform: translate(-50%,-50%);
+    /*Esto lo que hace es regresar el elemento a su punto original, osea al 0, 0, hacer esto puede sonar estupido
+    pero la combinación de las últimas 3 instrucciones son lo que logran el efecto hover del botón*/
+    transition: all 1s ease;
+    /*Para lograr el efecto, transition se debe poner en el pseudoelemento de la class*/
+    /*El elemento original debe ser position relative para que el pseudoelemento lo tome como referencia*/
+    z-index: -1;
+}
+#button1:hover::before{
+    width: 100%;
+    height: 30px;
+    /*Esto hace que el elemento aparezca de en medio hacia afuera junto con el width 0% que esta en el ::before
+    Esta instrucción se queda igual para el efecto vertical u horizontal, lo único que cambia es hacer inicialmente
+    width=0% para cuando quiero que sea horizontal el efecto y poner height=0% para cuando quiero que sea vertical
+    Esta instrucción si cambia para cuando queramos hacer que el efecto se haga de forma inclinada porque debemos 
+    agregar un transform*/
+}
+
+/*EFECTO DONDE EL BOTÓN SE LLENA DE UN COLOR QUE SALE DESDE EN MEDIO EN FORMA VERTICAL, a veces tiene problemas, para 
+hacerlo sin que tenga problemas ir al botón 3*/
+#button2{
+    /*Todo esto de abajo no importa, es solo el estilo del botón*/
+    width: 50%;
+    height: 30px;
+    background-color: rgba(61, 61, 61, 0.425);
+    border: tomato solid 2px;
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-family: 'News Cycle', sans-serif;
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*Todo esto de arriba no importa, es solo el estilo del botón*/
+    position: relative;
+    /*Debe ser position relative para que el pseudoelemento posterior sea position absolute y pueda tomar a este como 
+    referencia*/
+    z-index: 0;
+    /*z-index sirve para acomodar mis elementos uno encina de otro, pero en específico cuando uso un position relative
+    debo declarar ese elemento como z-index en la posición 0 porque esto es causado por haber puesto esta position, 
+    los demás elementos ya se deberán poner con un número mayor para que estén encima o con un número negativo para
+    que se pongan debajo de éste*/
+    overflow: hidden;
+    /*Esta instrucción se pone para evitar que se vean las partes que se salgan del elemento cuando se lleve a cabo el 
+    efecto con el fondo de color, si es que esto ocurre*/
+}
+#button2::before{
+    content: '';
+    /*Es importante recordar que siempre debe existir un content aunque se encuentre vacío, sino no funcionará el 
+    pseudoelemento*/
+    width: 100%;
+    height: 0%;
+    background-color: tomato;
+    /*Se inicialmente un height de 0% para que al hacer hover el fondo aparezca verticalmente*/
+    position: absolute;
+    /*El pseudoelemento toma como referencia al elemento original, por eso este debe ser position absolute y el elemento 
+    original debe ser position relative*/
+    top: 50%;
+    left: 50%;
+    /*El elemento está situado a la mitad del div*/
+    transform: translate(-50%,-50%);
+    /*Esto lo que hace es regresar el elemento a su punto original, osea al 0, 0, hacer esto puede sonar estupido
+    pero la combinación de las últimas 3 instrucciones son lo que logran el efecto hover del botón*/
+    transition: all 0.5s ease-in-out;
+    /*Para lograr el efecto, transition se debe poner en el pseudoelemento de la class*/
+    /*El elemento original debe ser position relative para que el pseudoelemento lo tome como referencia*/
+    z-index: -1;
+}
+#button2:hover::before{
+    width: 100%;
+    height: 30px;
+    /*Esto hace que el elemento aparezca de en medio hacia afuera junto con el height 0% que esta en el ::before*/
+}
+
+/*EFECTO DONDE EL BOTÓN SE LLENA DE UN COLOR QUE SALE DESDE EN MEDIO EN FORMA HORIZONTAL INCLINADA, este botón nunca 
+tiene problemas y puede servir para hacer los 2 anteriores*/
+#button3{
+    /*Todo esto de abajo no importa, es solo el estilo del botón*/
+    width: 50%;
+    height: 30px;
+    background-color: rgba(61, 61, 61, 0.425);
+    border: tomato solid 2px;
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-family: 'News Cycle', sans-serif;
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*Todo esto de arriba no importa, es solo el estilo del botón*/
+    position: relative;
+    /*Debe ser position relative para que el pseudoelemento posterior sea position absolute y pueda tomar a este como 
+    referencia*/
+    z-index: 0;
+    /*z-index sirve para acomodar mis elementos uno encina de otro, pero en específico cuando uso un position relative
+    debo declarar ese elemento como z-index en la posición 0 porque esto es causado por haber puesto esta position, 
+    los demás elementos ya se deberán poner con un número mayor para que estén encima o con un número negativo para
+    que se pongan debajo de éste*/
+    overflow: hidden;
+    /*Esta instrucción se pone para evitar que se vean las partes que se salgan del elemento cuando se lleve a cabo el 
+    efecto con el fondo de color, si es que esto ocurre*/
+}
+#button3::before{
+    content: '';
+    /*Es importante recordar que siempre debe existir un content aunque se encuentre vacío, sino no funcionará el 
+    pseudoelemento*/
+    width: 100%;
+    height: 0%;
+    background-color: tomato;
+    /*Se inicialmente un height de 0% para que al hacer hover el fondo aparezca horizontal e inclinada*/
+    position: absolute;
+    /*El pseudoelemento toma como referencia al elemento original, por eso este debe ser position absolute y el elemento 
+    original debe ser position relative*/
+    top: 50%;
+    left: 50%;
+    /*El elemento está situado a la mitad del div*/
+    transform: translate(-50%,-50%) rotate(45deg);
+    /*Esto lo que hace es regresar el elemento a su punto original, osea al 0, 0, hacer esto puede sonar estupido
+    pero la combinación de las últimas 3 instrucciones son lo que logran el efecto hover del botón y para que aparezca 
+    en forma inclinada se agrega el rotate y se pone los grados de inclinación que quiero con la unidad deg*/
+    transition: all 1s ease;
+    /*Para lograr el efecto, transition se debe poner en el pseudoelemento de la class*/
+    /*El elemento original debe ser position relative para que el pseudoelemento lo tome como referencia*/
+    z-index: -1;
+}
+#button3:hover::before{
+    height: 700%;
+    /*Hay veces que se debe rebasar el 100% para que se llene el botón completamente del color del fondo pero para eso
+    es que sirve la instrucción overflow: hidden; hecha en el elemento principal y por eso no se verá lo que se salga*/
+}
+/*Puedo voltear la forma en la que se inclina el color simplemente poniendo rotate(-45deg) y se ve cool intercalado
+o puedo voltearlo 90deg y se verá como el vertical, o puedo rotarlo 180deg y se verá como el horizontal, aparte hacer 
+uso de este botón nunca me dará problemas como ya antes lo mencioné*/
+
+/*EFECTO DONDE EL BOTÓN SE LLENA DE UN COLOR QUE APARECE DE LA NADA DESDE EN MEDIO Y DOS LÍNEAS VERTICALES*/
+#button4{
+    /*Todo esto de abajo no importa, es solo el estilo del botón*/
+    width: 50%;
+    height: 30px;
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-family: 'News Cycle', sans-serif;
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*Todo esto de arriba no importa, es solo el estilo del botón*/
+    position: relative;
+    /*Debe ser position relative para que el pseudoelemento posterior sea position absolute y pueda tomar a este como 
+    referencia*/
+    z-index: 0;
+    /*z-index sirve para acomodar mis elementos uno encina de otro, pero en específico cuando uso un position relative
+    debo declarar ese elemento como z-index en la posición 0 porque esto es causado por haber puesto esta position, 
+    los demás elementos ya se deberán poner con un número mayor para que estén encima o con un número negativo para
+    que se pongan debajo de éste*/
+}
+/*Si quiero que se le haga hover a algo del elemento principal puedo crear un hover solo para eso*/
+#button4:hover{
+    color: rgb(37, 37, 37);
+}
+#button4::before{
+    content: '';
+    /*Es importante recordar que siempre debe existir un content aunque se encuentre vacío, sino no funcionará el 
+    pseudoelemento*/
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    /*El pseudoelemento toma como referencia al elemento original, por eso este debe ser position absolute y el elemento 
+    original debe ser position relative*/
+    border-top: rgb(37, 37, 37) solid 2px;
+    border-bottom: rgb(37, 37, 37) solid 2px;
+    /*Se crean los bordes y el fondo de color que harán el efecto*/
+    transform: scaleY(2);
+    /*Se agranda el completo el pseudoelemento pero solo en forma vertical*/
+    opacity: 0;
+    /*Se declara que en un inicio tiene una transparencia de 0, osea que no es transparente pues*/
+    top: 0%;
+    left: 0%;
+    /*El elemento está situado a la mitad del div*/
+    /*Esto lo que hace es regresar el elemento a su punto original, osea al 0, 0, hacer esto puede sonar estupido
+    pero la combinación de las últimas 3 instrucciones son lo que logran el efecto hover del botón y para que aparezca 
+    en forma inclinada se agrega el rotate y se pone los grados de inclinación que quiero con la unidad deg*/
+    transition: all 0.5s ease;
+    /*Para lograr el efecto, transition se debe poner en el pseudoelemento de la class*/
+    /*El elemento original debe ser position relative para que el pseudoelemento lo tome como referencia*/
+    z-index: -1;
+}
+#button4:hover::before{
+    transform: scaleY(1);
+    /*Se agranda el completo el pseudoelemento pero solo en forma vertical*/
+    opacity: 1;
+    /*Al situarme sobre el botón el borde tendrá una transparencia de 1, osea que se vuelve totalmente transparente*/
+}
+#button4::after{
+    content: '';
+    /*Es importante recordar que siempre debe existir un content aunque se encuentre vacío, sino no funcionará el 
+    pseudoelemento*/
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    /*El pseudoelemento toma como referencia al elemento original, por eso este debe ser position absolute y el elemento 
+    original debe ser position relative*/
+    background-color: whitesmoke;
+    /*Se crean los bordes y el fondo de color que harán el efecto*/
+    transform: scale(0);
+    /*inicialmente el pseudoelemento no existe porque transform scale lo encogió hasta cero*/
+    top: 7%;
+    left: 0%;
+    /*El elemento está situado a la mitad del div*/
+    /*Esto lo que hace es regresar el elemento a su punto original, osea al 0, 0, hacer esto puede sonar estupido
+    pero la combinación de las últimas 3 instrucciones son lo que logran el efecto hover del botón y para que aparezca 
+    en forma inclinada se agrega el rotate y se pone los grados de inclinación que quiero con la unidad deg*/
+    transition: all 0.5s ease;
+    /*Para lograr el efecto, transition se debe poner en el pseudoelemento de la class*/
+    /*El elemento original debe ser position relative para que el pseudoelemento lo tome como referencia*/
+    z-index: -1;
+}
+#button4:hover::after{
+    transform: scale(1);
+    /*Al pasar por encima el mouse, el elemento ya existe*/
+}
+
+/*BOTÓN QUE SE LLENA IGUAL DE ABAJO HACIA ARRIBA O DE LADO PERO LO HACE EN FORMA CURVEADA DE ARRIBA HACIA ABAJO*/
+#button5{
+    /*Todo esto de abajo no importa, es solo el estilo del botón*/
+    width: 50%;
+    height: 30px;
+    background-color: rgba(61, 61, 61, 0.425);
+    border: tomato solid 2px;
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-family: 'News Cycle', sans-serif;
+    color: tomato;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*Todo esto de arriba no importa, es solo el estilo del botón*/
+    position: relative;
+    /*Debe ser position relative para que el pseudoelemento posterior sea position absolute y pueda tomar a este como 
+    referencia*/
+    z-index: 0;
+    /*z-index sirve para acomodar mis elementos uno encina de otro, pero en específico cuando uso un position relative
+    debo declarar ese elemento como z-index en la posición 0 porque esto es causado por haber puesto esta position, 
+    los demás elementos ya se deberán poner con un número mayor para que estén encima o con un número negativo para
+    que se pongan debajo de éste*/
+    overflow: hidden;
+    /*Esta instrucción se pone para evitar que se vean las partes que se salgan del elemento cuando se lleve a cabo el 
+    efecto con el fondo de color, si es que esto ocurre*/
+    transition: color 0.8s ease;
+}
+/*Si quiero que se le haga hover a algo del elemento principal puedo crear un hover solo para eso*/
+#button5:hover{
+    color: whitesmoke;
+}
+#button5::before{
+    content: '';
+    /*Es importante recordar que siempre debe existir un content aunque se encuentre vacío, sino no funcionará el 
+    pseudoelemento*/
+    width: 100%;
+    height: 0%;
+    background-color: tomato;
+    /*Se inicialmente un height de 0% para que al hacer hover el fondo aparezca de forma vertical*/
+    position: absolute;
+    /*El pseudoelemento toma como referencia al elemento original, por eso este debe ser position absolute y el elemento 
+    original debe ser position relative*/
+    top: 0%;
+    left: 0%;
+    /*El elemento está situado en la esquina superior izquierda del div para que salga de arriba hacia abajo*/
+    border-radius: 0 0 50% 50%;
+    /*Esto hace que salga curveado el fondo solo en las esquinas superiores, osea las de arriba*/
+    transition: all 0.8s ease;
+    /*Para lograr el efecto, transition se debe poner en el pseudoelemento de la class*/
+    /*El elemento original debe ser position relative para que el pseudoelemento lo tome como referencia*/
+    z-index: -1;
+}
+#button5:hover::before{
+    height: 200%;
+    /*Hay veces que se debe rebasar el 100% para que se llene el botón completamente del color del fondo pero para eso
+    es que sirve la instrucción overflow: hidden; hecha en el elemento principal y por eso no se verá lo que se salga*/
+}
+/*Puedo voltear la forma en la que se inclina el color simplemente poniendo rotate(-45deg) y se ve cool intercalado
+o puedo voltearlo 90deg y se verá como el vertical, o puedo rotarlo 180deg y se verá como el horizontal, aparte hacer 
+uso de este botón nunca me dará problemas como ya antes lo mencioné*/
+
+/*BOTÓN QUE SE LLENA IGUAL DE ABAJO HACIA ARRIBA O DE LADO PERO LO HACE EN FORMA CURVEADA DE ABAJO HACIA ARRIBA*/
+#button6{
+    /*Todo esto de abajo no importa, es solo el estilo del botón*/
+    width: 50%;
+    height: 30px;
+    background-color: rgba(61, 61, 61, 0.425);
+    border: cornflowerblue solid 2px;
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-family: 'News Cycle', sans-serif;
+    color: cornflowerblue;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*Todo esto de arriba no importa, es solo el estilo del botón*/
+    position: relative;
+    /*Debe ser position relative para que el pseudoelemento posterior sea position absolute y pueda tomar a este como 
+    referencia*/
+    z-index: 0;
+    /*z-index sirve para acomodar mis elementos uno encina de otro, pero en específico cuando uso un position relative
+    debo declarar ese elemento como z-index en la posición 0 porque esto es causado por haber puesto esta position, 
+    los demás elementos ya se deberán poner con un número mayor para que estén encima o con un número negativo para
+    que se pongan debajo de éste*/
+    overflow: hidden;
+    /*Esta instrucción se pone para evitar que se vean las partes que se salgan del elemento cuando se lleve a cabo el 
+    efecto con el fondo de color, si es que esto ocurre*/
+    transition: color 0.8s ease;
+}
+/*Si quiero que se le haga hover a algo del elemento principal puedo crear un hover solo para eso*/
+#button6:hover{
+    color: whitesmoke;
+}
+#button6::before{
+    content: '';
+    /*Es importante recordar que siempre debe existir un content aunque se encuentre vacío, sino no funcionará el 
+    pseudoelemento*/
+    width: 100%;
+    height: 0%;
+    background-color: cornflowerblue;
+    /*Se inicialmente un height de 0% para que al hacer hover el fondo aparezca de forma horizontal*/
+    position: absolute;
+    /*El pseudoelemento toma como referencia al elemento original, por eso este debe ser position absolute y el elemento 
+    original debe ser position relative*/
+    bottom: 0%;
+    left: 0%;
+    /*El elemento está situado en la esquina superior izquierda del div para que salga de abajo hacia arriba*/
+    border-radius: 50% 50% 0 0;
+    /*Esto hace que salga curveado el fondo solo en las esquinas inferiores, osea las de abajo*/
+    transition: all 0.8s ease;
+    /*Para lograr el efecto, transition se debe poner en el pseudoelemento de la class*/
+    /*El elemento original debe ser position relative para que el pseudoelemento lo tome como referencia*/
+    z-index: -1;
+}
+#button6:hover::before{
+    height: 200%;
+    /*Hay veces que se debe rebasar el 100% para que se llene el botón completamente del color del fondo pero para eso
+    es que sirve la instrucción overflow: hidden; hecha en el elemento principal y por eso no se verá lo que se salga*/
+}
+/*Puedo voltear la forma en la que se inclina el color simplemente poniendo rotate(-45deg) y se ve cool intercalado
+o puedo voltearlo 90deg y se verá como el vertical, o puedo rotarlo 180deg y se verá como el horizontal, aparte hacer 
+uso de este botón nunca me dará problemas como ya antes lo mencioné*/

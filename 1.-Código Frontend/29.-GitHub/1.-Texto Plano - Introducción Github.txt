@@ -1,0 +1,48 @@
+Github
+Github sirve para el control de versiones, esto se refiere a los diferentes cambios que puede tener cualquier tipo de proyecto, ya 
+sea un código, un archivo de texto normal, un archivo CAD de Solidworks, etc. De esta manera cuando la cague en una versión nueva, 
+puedo regresar en el tiempo a una versión anterior donde no existía el error presente y además varias personas pueden trabajar al 
+mismo tiempo en un proyecto de forma más sencilla.
+Los sistemas de control de versiones usualmente indican en cada cambio:
+•	La fecha de cada cambio.
+•	La hora de cada cambio.
+•	El autor del cambio.
+•	Un mensaje del cambio.
+Github fue creado por el creador del sistema operativo Linux llamado Linus Torvalds.
+ 
+La consola que se utiliza para mandar carpetas de mi computadora a Github se llama GitBash.
+ 
+Comandos Repositorio Github
+1.	git init: Comando que crea un repositorio en cualquier carpeta de mi computadora creando así una base de datos que almacenará 
+    todas las posibles versiones de ese proyecto en específico.
+a.	git add -A: Comando que asocia al repositorio (base de datos de todas las versiones del proyecto) todos los archivos contenidos 
+    en la carpeta donde previamente se creó un repositorio con el comando git init.
+b.	git add .: Comando que asocia al repositorio todos los archivos que hayan tenido un cambio desde la versión anterior.
+c.	git add nombre_archivo.extension: Comando que asocia al repositorio un archivo en específico de la carpeta donde previamente se 
+    creó un repositorio con el comando git init.
+2.	git commit -m “mensaje de esa versión”: Comando con el que se suben los cambios al repositorio local, osea a la base de datos 
+    que guarda las versiones del proyecto pero que solamente existe dentro de mí misma computadora.
+3.	git status: Comando para observar la etapa en la que se encuentra el repositorio actual.
+4.	git show: Comando para mostrar todos los cambios hechos en el proyecto, indicando exactamente el cambio que se realizó en cada 
+    una de ellas y quién lo hizo.
+5.	git log nombre_archivo.extension: Comando para mostrar todas las versiones del proyecto con todo y el mensaje que haya incluido 
+    en cada commit.
+6.	git push: Comando que envía todas las versiones previamente guardadas en el repositorio local por medio del comando git commit 
+    a un repositorio remoto guardado en la plataforma de Github.
+7.	git pull: Comando que jala todas las versiones de un repositorio remoto guardado en la plataforma de Github.
+8.	
+
+Comandos consola CM-DOS (Windows)
+o	cd nombre_carpeta: Sirve para introducirse en una carpeta en específico, para ello se debe encontrar en una carpeta donde se 
+    encuentre a la que nos queremos introducir.
+o	cd ..: Comando para retroceder una carpeta, osea salir de la carpeta donde nos encontramos.
+o	ls: Comando que muestra todas las carpetas que se encuentran dentro de la cual nos encontramos.
+o	pwd: Muestra el directorio (ruta de carpetas) en el que nos encontramos.
+o	clear: Comando que limpia el historial de comandos que haya en la consola gitbash.
+
+
+Este archivo se puede abrir en un Editor de Texto como Visual Studio Code y se mostrará tal cual como se ve, el que se verá 
+distinto es un archivo de Word, ya que este es binario, por lo que en el Editor de Texto se verá con simbología extraña.
+Git está hecho para guardar y editar versiones de archivos de texto plano, no reconocerá de forma tan precisa los cambios hechos en 
+un archivo binario (de Word) o uno CAD por ejemplo de SolidWorks.
+Los archivos de texto plano son los .txt o cualquier archivo de código HTML, CSS, JavaScript, Java, Python, PHP, etc.

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  </head>
+  <body>
+    <!--Contenido-->
+    <div id="contenedorRegistro">
+      <div id="datosRegistro">
+        <form>
+          <p class="textoDatos">Introduce tus datos</p>
+          <br>
+          <input type="text" placeholder="Nombre" style="width:300px;"><br><br>
+          <input type="email" placeholder="Correo" style="width:300px;"><br><br>
+          <input type="text" placeholder="Nombre de usuario" style="width:300px;"><br><br>
+          <input type="text" placeholder="Contraseña" style="width:300px;"><br><br>
+          <input type="text" placeholder="Confirma tu contraseña" style="width:300px;"><br><br>
+          <input type="text" placeholder="Banco" style="width:300px;"><br><br>
+          <input type="text" maxlength="16" placeholder="Número de tu tarjeta" style="width:300px;"><br><br>
+
+          <p class="textoDatos">Introduce tu dirección:</p>
+          <h1 class="textoDatos2">
+            Casa: <input type="radio" name="vivienda" value="casa"/>
+            Departamento: <input type="radio" name="vivienda" value="departamento"/>
+          </h1>
+          <br>
+          <input type="text" placeholder="Colonia" style="width:300px;"><br><br>
+          <input type="text" placeholder="Código Postal" style="width:300px;"><br><br>
+          <input type="text" placeholder="Calle" style="width:300px;"><br><br>
+          <input type="number" placeholder="Número" style="width:300px;"><br><br>
+        </form>
+      </div>
+      <div id="romboRegistro">
+        <div class="contenidoRombo">
+          <img src="images/mechanic.jpg" alt="eléctrico" style="width: 121px;height:117px;">
+        </div>
+        <div class="contenidoRombo">E</div>
+        <div class="contenidoRomboE">
+          <h1 class="textoBienvenida"><a href="index.html" style="color:white; text-decoration:none;">Atrás</a></h1>
+        </div>
+        <div class="contenidoRombo">L</div>
+        <div class="contenidoRombo" style="background-color:black;">
+          <h1 id="bienvenida2">¡Bienvenido!</h1>
+        </div>
+        <div class="contenidoRombo">A</div>
+        <div class="contenidoRomboE">
+          <a class="textoBienvenida" href="Bienvenida.html" style="text-decoration:none; color:white;">Registrarme</a>
+        </div>
+        <div class="contenidoRombo">M</div>
+        <div class="contenidoRombo">
+          <img src="images/electric.jpg" alt="mecánico" style="width: 120px;height: 117px; transform: rotate(180deg);">
+        </div>
+      </div>
+    </div>
+    <!-- Barra de legales -->
+    <div class="legales container-fluid">
+    	<div class="col-md-5 info1">
+    		<div class="legal-link" id="copyright">©Échame la mano 2018</div>
+    		<div class="legal-link">Términos</div>
+    		<div class="legal-link">Privacidad</div>
+    		<div class="legal-link">Ayuda</div>
+    	</div>
+    	<div class="col-md-2 legal-logo-container">
+    			<img id="legal-logo" src="images/logo-blanco.png">
+    	</div>
+    	<div class="col-md-5 info2">
+    		<div class="legal-link">Nosotros</div>
+    		<div class="legal-link">Blog</div>
+    		<div class="legal-link">Legales</div>
+    		<div class="legal-link">Socios</div>
+    		<div class="legal-link">Inversionistas</div>
+    		<div class="legal-link">Dev.f</div>
+    	</div>
+    </div>
+    <script type="text/javascript" src="js/action.js"></script>
+  </body>
+</html>

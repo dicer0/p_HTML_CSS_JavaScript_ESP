@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--Dentro del header haremos animaciones que se ejecutarán solo una vez cuando carguemos nuestra página-->
+    <!--Header es tal cual un div que tiene un nombre especial para lo que haya hasta arriba de mi página-->
+    <header>
+        <!--Nav es otro div equis pero que tiene un nombre diferente para que lo use como navbar-->
+        <nav>
+            <!--Se suele usar la combinación ul (que guarda un listado de elementos)-->
+            <ul>
+                <!--Y li que guarda cada elemento enlistado individualmente para crear navbars, 
+                aunque en sí los navbars los puedo hacer como yo quiera-->
+                <li>
+                    <!--Como normalmente el navbar contiene un menú que te redirige la página a distintas pantallas, se 
+                    usa también una etiqueta a para que cada opción sea un link a una pantalla diferente-->
+                    <a href="#">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <!--Como normalmente el navbar contiene un menú que te redirige la página a distintas pantallas, se 
+                    usa también una etiqueta a para que cada opción sea un link a una pantalla diferente-->
+                    <a href="#">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <!--Como normalmente el navbar contiene un menú que te redirige la página a distintas pantallas, se 
+                    usa también una etiqueta a para que cada opción sea un link a una pantalla diferente-->
+                    <a href="#">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!--Main se usa para indicar el contenido de la página-->
+    <main>
+        <!--Section se usa para indicar cada parte de la página individualmente-->
+        <section>
+            <!--Article se usa para indicar cada artículo que tendrá cada parte de la página-->
+            <article>
+                <!--H1, H2, H3,..., etc. se refieren a los heading de cada párrafo, osea a los títulos y el tamaño de 
+                dichos títulos va decayendo mientras más aumente el número, el texto de h1 es mucho más grande que h3-->
+                <h1>
+                    Letras rem
+                </h1>
+                <!--P se pone para poner un párrafo-->
+                <p class="unidad-rem">
+                    <!--Si pongo la palabra lorem seguido de un número me aparecerá un texto cualquiera de prueba
+                    con el número de palabras que le indiqué-->
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque laboriosam natus commodi 
+                    temporibus, odit mollitia tempore consectetur exercitationem, quam tempora consequatur 
+                    incidunt totam ipsa voluptatibus sunt nostrum. Facere, aspernatur quaerat!
+                </p>
+            </article>
+            <!--Article se usa para indicar cada artículo que tendrá cada parte de la página-->
+            <article class="clasePadre">
+                <!--H1, H2, H3,..., etc. se refieren a los heading de cada párrafo, osea a los títulos y el tamaño de 
+                dichos títulos va decayendo mientras más aumente el número, el texto de h1 es mucho más grande que h3-->
+                <h3>
+                    Letras rem y em
+                </h1>
+                <!--P se pone para poner un párrafo-->
+                <p class="unidad-rem">
+                    <!--Si pongo la palabra lorem seguido de un número me aparecerá un texto cualquiera de prueba
+                    con el número de palabras que le indiqué, esto salió por poner lorem10-->
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, adipisci. 
+                    <strong style="font-weight: bold; color: white;">Letras rem respecto al body</strong>
+                </p>
+                <p id="unidad-em">
+                    <!--Si pongo la palabra lorem seguido de un número me aparecerá un texto cualquiera de prueba
+                    con el número de palabras que le indiqué, esto salió por poner lorem10-->
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, adipisci. 
+                    <strong style="font-weight: bold; color: white;">Letras em respecto al elemento padre</strong>
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <!--Dentro del div haremos una animación que se estará ejecutando constantemente para dar un efecto de color de 
+    fondo cambiante-->
+    <div id="fondoCambiante1">
+        <h2 class="titulo1">
+            GRADIENTE DE COLOR
+        </h2>
+        <button class="botonFun1">
+            Botón
+        </button>
+    </div>
+
+    <div id="fondoCambiante2">
+        <h2 class="titulo2">
+            GRADIENTE DE COLOR ANIMADO
+        </h2>
+        <button class="botonFun2">
+            Botón
+        </button>
+    </div>
+</body>
+</html>

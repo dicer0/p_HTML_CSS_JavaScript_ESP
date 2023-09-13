@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="form.css"/>
+    <title>form</title>
+  </head>
+  <body>
+    <form>
+      <input type="text"/>
+      <input type="number"/>
+      <!--Aqui lo que hace es aceptar solo numeros si se corre en un
+      navegador bueno como chrome pero sino se debe poner otra cosa-->
+      <input type="date"/>
+      <input type="checkbox" name="groceriesMilk"/>
+      <input type="checkbox" name="groceriesMeat"/>
+      <input type="checkbox" name="groceriesEggs"/>
+      <input type="checkbox" name="groceriesCookies"/>
+      <!--En el checkbox se puede seleccionar varias opciones, se debe
+      dar un nombre diferente a cada checkbox-->
+      <input type="radio" name="market" value="superama"/>
+      <input type="radio" name="market" value="walmart"/>
+      <!--En el radiobutton se puede seleccionar solo 1 opcion, para que
+      esto funcione deben tener el mismo name, para diferenciarlos se les
+      puede asignar un value diferente-->
+
+      <select class="" name="ciudades">
+      <!--Select me sirve para hacer una lista de opciones multiples, cada
+      una con su respectivo nombre y value-->
+      <!--El name sirve para que al darme un resultado me salga
+      el nombre de mi select = el value de mi opcion-->
+
+        <option value="MEX">Ciudad de México</option>
+        <option value="GDL">Guadalajara</option>
+        <option value="CUN">Cancún</option>
+        <option value="MTY">Monterrey</option>
+      </select>
+      <select class="" name="">
+        <option value=""></option>
+      </select>
+      <!--El value es para poner nombres mas sencillos de entender para la
+      maquina que el nombre tal cual de la opcion que tiene acentos, etc.
+      los cuales se encuentran dentro de la etiqueta y son los que apareceran
+      en pantalla para que sea mas entendible para el usuario-->
+
+      <input type="submit"/>
+      <!--Se debe poner un input de submit para que me envie los resultados
+      estos saldran en el url-->
+    </form>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!--En este ejercicio debo poner radiobuttons para cada color primario
+que son rojo verde y azul y combinarlos en un rgb de colores para que
+me aparezca un div con ese color-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="colores">
+      <form>
+      <div id="red">
+      RED <br>
+        <input type="radio" name="rojo" value="encendido" id="r1R">
+        <input type="radio" name="rojo" value="apagado">
+      </div>
+      <div id="green">
+      GREEN <br>
+        <input type="radio" name="verde" value="encendido" id="r1G">
+        <input type="radio" name="verde" value="apagado">
+      </div>
+      <div id="blue">
+      BLUE <br>
+        <input type="radio" name="azul" value="encendido" id="r1B">
+        <input type="radio" name="azul" value="apagado">
+      </div>
+      <div class="correr" onclick="colorear()">
+        CORRELA PAPU
+      </div>
+      <p>Aquí saldrá un cuadro con la combinación de colores que haya seleccionado:</p>
+      <div class = "colorF" id="display">
+      <!--Div vacio para el color-->
+      </div>
+    </form>
+    </div>
+    <script type="text/javascript" src="action.js">
+    </script>
+  </body>
+</html>

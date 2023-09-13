@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>CSS Avanzado</title>
+</head>
+<body>
+<!--EN ESTE DOCUMENTO HTML SOLO DEBO PONER ATENCIÓN A LOS DIVS QUE ESTÁN USANDO UN ID O CLASS-->
+    <!--INCLUIR PSEUDOELEMENTOS ::BEFORE Y ::AFTER CON CSS-->
+    <div id="texto_Imagen">
+        TÍTULO CUALQUIERA
+    </div>
+
+    
+    <!--AÑADIR COMILLAS DOBLES CON SOLO CSS USANDO ::BEFORE O ::AFTER-->
+    <blockquote id="comillasDobles">
+        <!--La etiqueta blockquote por sí sola hace que exista un margin a la izquierda del elemento-->
+        Blockquote sirve para agregar frases resaltadas a las que les puedes agregar comillas con los 
+        pseudonimos ::before y ::after
+    </blockquote>
+
+    
+    <div style="background-color: whitesmoke; height: 350px; width: 94%; display: flex; justify-content: space-around; align-items: center; flex-direction: column; padding-left: 3%; padding-right: 3%;">
+        <p style="background-color: white; color: #322f3a; font-size: 18px; font-family: 'Open Sans Condensed', sans-serif; font-family: 'News Cycle', sans-serif; padding: 1%; text-align: justify;">
+            ocupa la tecnología de para la 
+            <!--EFECTO DONDE APARECE UN MENSAJE DE TEXTO EN UN PUNTO AL SITUARSE SOBRE UN ELEMENTO-->
+            <a href="#" class="mensajeHoverPuntoMedio">gestión y el almacenamiento de información segura, anónima, descentralizada y libre de falsificaciones.</a> El término Blockchain 
+            significa, por lo que el software trabaja con una red de computadoras interconectadas, cada una con un programa o "bloque" que contiene información del siguiente para crear la conexión y asegurar 
+            la seguridad de los datos contenidos en esta. Actualmente este sistema de gestión y almacenamiento de datos es el más seguro del marcado, en este se basa la famosa criptomoneda llamada Bitcoin.
+        </p>
+        <p style="background-color: white; color: #322f3a; font-size: 18px; font-family: 'Open Sans Condensed', sans-serif; font-family: 'News Cycle', sans-serif; padding: 1%; text-align: justify;">
+            ocupa la tecnología de para la 
+            <!--EFECTO DONDE APARECE DE ABAJO HACIA ARRIBA UN MENSAJE DE TEXTO AL SITUARSE SOBRE UN ELEMENTO-->
+            <a href="#" class="mensajeHoverDesdeAbajo">gestión y el almacenamiento de información segura, anónima, descentralizada y libre de falsificaciones.</a> El término Blockchain 
+            significa, por lo que el software trabaja con una red de computadoras interconectadas, cada una con un programa o "bloque" que contiene información del siguiente para crear la conexión y asegurar 
+            la seguridad de los datos contenidos en esta. Actualmente este sistema de gestión y almacenamiento de datos es el más seguro del marcado, en este se basa la famosa criptomoneda llamada Bitcoin.
+        </p>
+    </div>
+
+    
+    <div style="width: 100%; height: 10vh; background-color: white; display: flex; justify-content: center; align-items: center;">
+        <!--USAR PSEUDOELEMENTOS ::BEFORE Y ::AFTER COMO HERRAMIENTAS DE DISEÑO PARA TITULOS-->
+        <!--Puedo intentar poner cualquier titulo que quiera y el elemento se adaptará, excepto si reduzco mucho el 
+        ancho de la pantalla hasta el punto donde el texto debe ocupar 2 filas, ahí si ya tendría que hacerle un diseño 
+        responsivo para que se vea el diseño-->
+        <h1 id="estiloTitulo">
+            TÍTULO CUALQUIERA X2 BLA BLA
+        </h1>
+    </div>
+    
+
+    <!--EFECTO HOVER DE FONDO OBSCURO CON TEXTO ENCIMA DE UNA IMAGEN SOLO USANDO PSEUDOELEMENTOS ::BEFORE Y ::AFTER: 
+    Este efecto usa la herencia hover para los tipos de elementos, id y clases, para entenderlo mejor debo ver primero
+    la explicación completa de este concepto en la carpeta 1.-Herencia Hover-->
+    <div style="width: 100%; height: 500px; background-color: rgb(252, 168, 90); display: flex; justify-content: space-around; align-items: center;">
+        <!--Este es el div que por medio de una clase padre maneja todo el efecto por medio del manejo de sus elementos 
+        generales-->
+        <div class="efectoImagenTexto">
+            <img style="max-width: 100%; display: flex; justify-content: center; align-items: center; z-index: -2;" src="img/hugs-1024x869.jpg" alt="olix2">
+            <section style="width: 100%; height: 400px; background-color: rgba(0, 0, 0, 0.39); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <div style="width: 90%; height: 5vh; font-family: 'Fjalla One', sans-serif; font-size: 20px; letter-spacing: 1px; line-height: 80px; color: whitesmoke; text-align: center; margin: 0px; display: flex; justify-content: center; align-items: center;">
+                    DESCRIPCIÓN
+                </div>
+                <div style="width: 80%; height: 25vh; font-family: 'Open Sans', sans-serif; font-size: 15px; text-align: center; padding: 5%; margin: 0px;">
+                    <strong style="font-weight: bold;">Sistema monolítico prefabricado para proyectos de infraestructura como carreteras, puertos y aeropuertos</strong>. Disminuye la vibración en la rejilla cuando son instalados en zonas de tráfico a altas velocidades. 
+                </div>
+            </section>
+        </div>
+        <!--Este es el div que por medio de una clase padre maneja todo el efecto por medio del manejo de sus elementos 
+        generales-->
+        <!--Este es el div que por medio de una clase padre maneja todo el efecto por medio del manejo de sus elementos 
+        generales-->
+        <div class="efectoImagenTexto">
+            <img style="max-width: 120%; display: block; display: flex; justify-content: center; align-items: center; z-index: -2;" src="img/21st-Birthday-Party-Photos-in-Sydney-by-La-Lente-Photography-for-Sarah-smiling-girls.jpg" alt="olix2">
+            <section style="width: 100%; height: 400px; background-color: rgba(0, 0, 0, 0.39); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <div style="width: 90%; height: 5vh; font-family: 'Fjalla One', sans-serif; font-size: 20px; letter-spacing: 1px; line-height: 80px; color: whitesmoke; text-align: center; margin: 0px; display: flex; justify-content: center; align-items: center;">
+                    TITULO 2
+                </div>
+                <div style="width: 80%; height: 25vh; font-family: 'Open Sans', sans-serif; font-size: 15px; text-align: center; padding: 5%; margin: 0px;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rutrum quisque non tellus orci ac auctor augue mauris. Ac turpis egestas maecenas pharetra convallis posuere. Duis convallis convallis tellus id. Enim ut sem viverra aliquet. Justo laoreet sit amet cursus sit amet dictum sit. In nibh mauris cursus mattis molestie a iaculis at. Maecenas sed enim ut sem viverra aliquet eget. Vel risus commodo viverra maecenas accumsan. Tristique senectus et netus et. Pharetra massa massa ultricies mi.
+                </div>
+            </section>
+        </div>
+        <!--Este es el div que por medio de una clase padre maneja todo el efecto por medio del manejo de sus elementos 
+        generales-->
+    </div>
+    
+
+    <div style="background-color: tomato; width: 100%; height: 450px; display: flex; justify-content: space-around; align-items: center; flex-direction: row;">
+        <!--LISTADO DE ELEMENTOS CON ESTILO ESPECIAL USANDO SOLO CSS-->
+        <div id="contador">
+            <h1 class="listado">
+                Oli 1
+            </h1>
+            <h1 class="listado">
+                Oli 2
+            </h1>
+            <h1 class="listado">
+                Oli 3
+            </h1>
+            <h1 class="listado">
+                Oli 4
+            </h1>
+            <h1 class="listado">
+                Oli 5
+            </h1>
+            <h1 class="listado">
+                Oli 6
+            </h1>
+        </div>
+
+        
+        <!--EFECTOS HOVER DE BOTÓN ESPECIALES-->
+        <div style="width: 40%; height: 400px; background-color: crimson; display: flex; flex-direction: column; justify-content: space-around; align-items: center;">
+            <a id="button1" href="#">
+                Botón 1
+            </a>
+            <a id="button2" href="#">
+                Botón 2
+            </a>
+            <a id="button3" href="#">
+                Botón 3
+            </a>
+            <a id="button4" href="#">
+                Botón 4
+            </a>
+            <a id="button5" href="#">
+                Botón 5
+            </a>
+            <a id="button6" href="#">
+                Botón 6
+            </a>
+        </div>
+    </div>
+</body>
+</html>

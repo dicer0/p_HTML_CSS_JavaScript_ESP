@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/blockvisionlogo.png" type="image" sizes="16x16">
+    <title>Registro</title>
+  </head>
+  <body>
+    <!-- Empieza div principal -->
+    <div style="width: 100%;
+    height: 1000px;
+    padding-top: 1px;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-image: linear-gradient(to bottom right, rgb(2, 60, 187), rgba(255,255,255,0.2)), url('img/Filling-Form.jpg');;">
+      <div style="width:98.4%; height: 980px; margin: 10px; border: 1px solid #f7931a; display: flex; justify-content: flex-end; align-items: center;">
+        <!-- Empieza Div con formulario para introducir datos -->
+        <div style="width: 500px;
+        height: 920px;
+        background-color: rgba(50, 47, 58,0.6);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 1px;">
+          <form>
+            <p class="textoDatos" style="margin-bottom: -20px;">Introduzca sus datos</p>
+            <br>
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -2px; margin-top: 10px;">Nombre/s</p>
+            <input type="text" id="nombre" style="width:300px;">
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -2px; margin-top: 10px;">Apellido Paterno</p>
+            <input type="text" id="apPaterno" style="width:300px;">
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -2px; margin-top: 10px;">Apellido Materno</p>
+            <input type="text" id="apMaterno" style="width:300px;">
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -2px; margin-top: 10px;">CURP</p>
+            <input type="text" id="CURP" style="width:300px;">
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -2px; margin-top: 10px;">Edad</p>
+            <input type="number" id="Edad" style="width:300px;">
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -2px; margin-top: 10px;">Sexo</p>
+            <select style="width: 300px;" id="Sexo">
+              <option value="M">Mujer</option>
+              <option value="H">Hombre</option>
+            </select>
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -2px; margin-top: 10px;">Correo</p>
+            <input type="email" style="width:300px;">
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -2px; margin-top: 10px;">Contraseña</p>
+            <input type="password" style="width:300px;">
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -2px; margin-top: 10px;">Confirmar contraseña</p>
+            <input type="password" style="width:300px;">
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -2px; margin-top: 10px;">Suma asegurada $</p>
+            <input type="number" id="SumaAsegurada" style="width:300px;">
+
+            <p class="textoDatos" style="margin-bottom: -5px;">Expediente médico</p>
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -20px;"> 
+              ¿Fuma?
+            </p>
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -15px;">
+              Si: <input type="radio" name="Fumar" value="si"/>
+              No: <input type="radio" name="Fumar" value="no"/>
+            </p>
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -20px;"> 
+              ¿Toma?
+            </p>
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -15px;">
+              Si: <input type="radio" name="Tomar" value="si"/>
+              No: <input type="radio" name="Tomar" value="no"/>
+            </p>
+            <p class="textoDatos" style="font-size: 17px; border: none; margin-bottom: -20px;"> 
+              ¿Padece alguna enfermedad crónica?
+            </p>
+            <p class="textoDatos" style="font-size: 17px; border: none;">
+              Si: <input type="radio" name="Enfermedad" value="si"/>
+              No: <input type="radio" name="Enfermedad" value="no"/>
+            </p>
+          </form>
+        </div>
+        <!-- Termina Div con formulario para introducir datos -->
+
+        <!-- Empieza Div de rombito -->
+        <div id="romboRegistro">
+          <div class="contenidoRombo">
+            <img src="img/circuit.jpg" alt="logoRegistro" style="width: 121px;height:117px;">
+          </div>
+          <div class="contenidoRombo">D</div>
+          <div class="contenidoRomboE">
+            <h1 class="textoBienvenida"><a href="index.html" style="color:white; text-decoration:none;">Atrás</a></h1>
+          </div>
+          <div class="contenidoRombo">J</div>
+          <div class="contenidoRombo" style="background-color:black;">
+            <h1 class="titulo" style="color: white; transform: rotate(315deg); font-size: 32px;">¡Bienvenido!</h1>
+          </div>
+          <div class="contenidoRombo">V</div>
+          <div class="contenidoRomboE">
+            <a class="textoBienvenida" onclick="return App.crearPoliza()" style="text-decoration:none; color:white;">Registrarme</a>
+          </div>
+          <div class="contenidoRombo">D</div>
+          <div class="contenidoRombo">
+            <img src="img/circuit.jpg" alt="mecánico" style="width: 120px;height: 117px; transform: rotate(180deg);">
+          </div>
+        </div>
+        <!-- Termina Div de rombito -->
+      </div>
+    </div>
+    <!-- Termina div principal -->
+    <!-- Empieza Div con la barra de legales -->
+    <div style="width: 100%; height: 150px; background-color: #322f3a; display: flex; align-items: center; justify-content: center;">
+      <div style="width: 90%; height: 125px; display: flex; justify-content: space-around; flex-direction: row; align-items: center; border-top: solid 1px white;">
+          <div style="height: 100px; width: 60%; display: flex; align-items: center; justify-content: center;">
+              <p Class="legalElements">
+                  © Block_vision Project 2019-∞ Publicado en Hackathon Bancomer 2019
+              </p>
+          </div>
+          <div style="height: 100px; width: 20%; display: flex; align-items: center; justify-content: center;">
+              <img src="img/blockvisionlogo.png" alt="logo" style="width: 150px;">
+          </div>
+          <div style="height: 100px; width: 10%; display: flex; justify-content: center; align-items: center;">
+              <img src="img/images (3).jpg" alt="logo" style="width: 100px;">
+          </div>
+      </div>
+  </div>
+  <!-- Termina Div con la barra de legales -->
+    
+    <script type="text/javascript" src="js/action.js"></script>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <!-- Include all compiled plugins (below), or include individual files as needed -->
+     <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/truffle-contract@3.0.6/dist/truffle-contract.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.5/jquery.csv.js"></script>
+     <script src="app.js"></script>
+     <script src="calcPrima.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script type="text/javascript" src="action.js">
+    /*Con esto llamamos a nuestro archivo de javascript (.js) siempre se debe
+    poner type="text/javascript" y para llamar a mi archivo en especifico
+    se debe poner src="nombre de mi archivo con extensión"*/
+    /*Esto hace que sea como si hubiera puesto todas mis funciones dentro de
+    esta etiqueta y se hace para tener mas orden y tener modulacion en el
+    codigo*/
+    </script>
+    <div class="button" onclick="sumar()">
+    <!--onlcick es llamado un evento y sirve para convocar el archivo javascript
+    ,hay varios tipos de eventos-->
+    <!--Lo que hará onclick será llamar a la funcion sumar o saludar dependiendo
+    de cual ponga dentro de las comillas-->
+    <!--Dentro de la intruccion onclick le pondre el parametro de entrada de la
+    funcion, pero como es un String lo debo poner con comillas"", pero como ya
+    hay comillas afuera le debo poner comillas simples'' porque estan
+    anidadas-->
+    <!--No puede haber 2 onclick en un mismo div, solo le hara caso al
+    ultimo-->
+      RUN
+    </div>
+    <!--Con onclick hace que cuando le de click al div se comunique con la
+    funcion que hay dentro de mi archivo action.js y en la consola se imprima
+    lo que le puse dentro de la funcion-->
+    <div id="display">
+    <!--Este es un div vacio, el cual no tiene tamaño, sera como una linea-->
+    </div>
+    <input type="text" id="numA">
+    <input type="text" id="numB">
+  </body>
+</html>

@@ -1,0 +1,287 @@
+/*@font-face sirve para mandar a llamar las letras descargadas de Google Fonts de manera local.*/
+@font-face {
+    src: url(../fonts/ShareTechMono-Regular.ttf);
+    font-family: ShareTechMono;
+}
+@font-face {
+    src: url(../fonts/Inter-Thin.ttf);
+    font-family: Inter-Thin;
+}
+
+body{
+    background-color: #171717;
+    font-family: ShareTechMono;
+    height: 450px;
+}
+
+/*El efecto de Particle.js debe ser asignado a un id, que se indica en el primer parámetro del archivo action.js*/
+#particle-background{
+    /*POSITION de CSS sirve para colocar un div o elemento y sus parámetros son los siguientes:
+    - static: Es el modo default y acomoda los elementos dependiendo del órden en el que estén creados en el documento 
+    HTML, metíendolos en un flujo de documentos (document flow) sin que éstos se puedan poner uno encima de otro, además
+    hace que ocupen la fila completa
+    
+    - relative: Funciona de la misma forma que static, pero permite mover el elemento empujándolo desde arriba, abajo, 
+    derecha o izquierda desde el punto donde se creó, siguiendo el órden en el que fue creado en el documento HTML, 
+    cuando yo haga esto, podré posicionar este elemento sobre los otros ya que éste no obedece el órden del document 
+    flow, mientras que los demás elementos si lo hacen, además hace que los elementos también ocupen la fila completa.
+    El elemento que tenga este valor se tomará como punto de referencia para los elementos que sean posotion:absolute, 
+    esto implica que los elementos que tengan position:absolute se crearán encima de éste y lo tomarán como referencia 
+
+    - absolute: Funciona de la misma forma que relative permitiendo mover el elemento empujándolo desde arriba, abajo, 
+    derecha o izquierda desde el punto donde se creó, pero la diferencia con relative es que los demás elementos actuarán
+    como si éste nunca hubiera sido creado en el órden como se acomodaron los elementos siguiendo el document flow, por 
+    lo que encimarán en él, además hace que el elemento absolute solo ocupe el espacio que necesita su contenido y no la 
+    fila completa.
+    Los elementos que sean position:absolute se acomodarán respecto a otro elemento que tenga un position:relative, esto 
+    implica que su punto de inicio desde donde lo puedo empujar hcon top, bottom, left y right es la esquina superior 
+    izquierda del elemento que tenga  position:relative, si ningún elemento es relative, se acomodará respecto al body
+    
+    - fixed: Es parecido a absolute pero el elemento siempre se acomoda respecto al body, osea a la pantalla del navegador
+    
+    - sticky: El elemento te sigue a donde vayas después de que toque el punto de hasta arriba de la pantalla, se usa 
+    mucho para navbars
+    
+    Ya que haya elegido uno, puedo mover el elemento con las instrucciones top, bottom, left o right*/
+    position: relative;
+    z-index: -1;
+    background-color: black;
+}
+
+
+h1{
+    color: white;
+    font-size: 72px;
+    font-weight: 100;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+    z-index: 1;
+    position: absolute;
+    top: 100px;
+    left: 0%;
+    height: 130px;
+    width: 380px;
+    padding: 10px;
+    padding-left: 25px;
+    background-color: black;
+    border: solid white 1px;
+    box-shadow: 0px 0px 50px rgba(41, 243, 195, 1);
+}
+
+/*PESUDOELEMENTOS ::BEFORE Y AFTER::
+Estos pueden ser aplicados a cualquier elemento html que tenga apretura y cierre, ya sea un class, id, p, a, div, etc.
+La etiqueta a la que se esté aplicando el pseudo element debe tener etiquetas de apertura y cierre como: <a></a> 
+porque lo que yo ponga en la etiqueta content: aparecerá antes o después del contenido que esté dentro de esas 
+etiquetas, además puedpo hacer uso de la instrucción display: block; si quiero que se coloque en un solo renglón 
+aparte, puedo usar display: flex; si quiero acomodarlo en un punto en específico o puedo no poner nada y lo que haya
+en content se acomodará antes o después del contenido pero en el mismo renglón.
+En simples términos el pseudoelemento after y before sirven para colocar elementos asociados a un class, id, etc.*/
+.glitch-container .glitch-text{
+    position: relative;
+    color: #29f3c3;
+    text-shadow: none;
+    font-size: 35px;
+    transform: scale(2);
+}
+.glitch-container .glitch-text::before,
+.glitch-container .glitch-text::after{
+    position: absolute;
+    content: attr(data-text);
+    color: #29f3c3;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    overflow: hidden;
+}
+.glitch-container .glitch-text::before{
+    left: 3px;
+    text-shadow: -2px 0px 0px rgba(255, 0, 0, 0.5);
+    animation: glitch-1 28s 0s linear reverse infinite;
+    z-index: 1;
+}
+.glitch-container .glitch-text::after{
+    left: -3px;
+    text-shadow: -2px 0px 0px rgba(0, 0, 255, 0.7);
+    animation: glitch-2 35s 0s linear reverse infinite;
+}
+@keyframes glitch-1 {
+    0% {
+        /*Método que recorta un texto o imagen en un cuadrado a través de la siguiente sintaxis y pudiendo usar 
+        solo la unidad de pixeles:
+        clip: rect (esquina superior izq, esquina superior der, esquina inferior der, esquina inferior izq).
+            - La esquina superior izq y la esquina inferior izq indican la altura del rectángulo.
+            - La esquina superior der indica el ancho del recorte y puede adoptar valores de 0 a 210px o se puede 
+            dejar como auto y de esta forma siempre acapará el ancho completo del texto.
+            - La esquina inferior der indica la altura del rectpangulo y puede adoptar valores de 7 a 39px.
+    
+        esquina superior izq: de 0 a 39px.                            esquina superior der: de 0 a 210px.
+    
+    
+        esquina inferior izq: de 0 a 210px.                            esquina inferior der: de 0 a 39px.
+      
+        Se llena el cuadro completo con la siguiente instrucción: clip: rect(0px, 210px, 39px, 0px);*/
+        /*máximo esta escala:     clip: rect(39px,  auto, 39px,  210px);
+        máximo escala anterior: clip: rect(148px, auto, 148px, 0px);*/
+        clip: rect(10px, auto, 11px, 0px);
+    }
+    5% {
+        clip: rect(28px, auto, 29px, 0px);
+    }
+    10% {
+        clip: rect(6px, 210px, 19px, 0px);
+    }
+    15% {
+        clip: rect(0px, auto, 30px, 0px);
+    }
+    20% {
+        clip: rect(12px, 210px, 39px, 0px);
+    }
+    25% {
+        clip: rect(0px, 210px, 35px, 0px);
+    }
+    30% {
+        clip: rect(0px, auto, 39px, 0px);
+    }
+    35% {
+        clip: rect(7px, auto, 10px, 0px);
+    }
+    40% {
+        clip: rect(25px, auto, 26px, 0px);
+    }
+    45% {
+        clip: rect(14px, auto, 39px, 0px);
+    }
+    50% {
+        clip: rect(0px, auto, 23px, 0px);
+    }
+    55% {
+        clip: rect(0px, auto, 18px, 0px);
+    }
+    60% {
+        clip: rect(210px, auto, 39px, 0px);
+    }
+    65% {
+        clip: rect(27px, auto, 36px, 0px);
+    }
+    70% {
+        clip: rect(210px, auto, 39px, 0px);
+    }
+    75% {
+        clip: rect(0px, auto, 39px, 0px);
+    }
+    80% {
+        clip: rect(7px, auto, 10px, 0px);
+    }
+    85% {
+        clip: rect(210px, auto, 39px, 0px);
+    }
+    90% {
+        clip: rect(25px, auto, 39px, 0px);
+    }
+    95% {
+        clip: rect(31px, auto, 39px, 0px);
+    }
+    100% {
+        clip: rect(210px, auto, 39px, 0px);
+    }
+}  
+
+@keyframes glitch-2 {
+    0% {
+        /*Máximo esta escala:           clip: rect(39px,  auto, 39px,  210px);
+        Máximo escala ejemplo anterior: clip: rect(148px, auto, 148px, 0px);*/
+        clip: rect(12px, 210px, 39px, 12px);
+    }
+    5% {
+        clip: rect(0px, 210px, 35px, 0px);
+    }
+    10% {
+        clip: rect(6px, 210px, 19px, 6px);
+    }
+    15% {
+        clip: rect(210px, auto, 39px, 210px);
+    }
+    20% {
+        clip: rect(21px, auto, 22px, 21px);
+    }
+    25% {
+        clip: rect(10px, auto, 11px, 10px);
+    }
+    30% {
+        clip: rect(28px, auto, 29px, 28px);
+    }
+    35% {
+        clip: rect(7px, auto, 10px, 7px);
+    }
+    40% {
+        clip: rect(25px, auto, 39px, 25px);
+    }
+    45% {
+        clip: rect(14px, auto, 39px, 14px);
+    }
+    50% {
+        clip: rect(0px, auto, 30px, 0px);
+    }
+    55% {
+        clip: rect(0px, auto, 18px, 0px);
+    }
+    60% {
+        clip: rect(210px, auto, 39px, 210px);
+    }
+    65% {
+        clip: rect(0px, auto, 39px, 0px);
+    }
+    70% {
+        clip: rect(31px, auto, 39px, 31px);
+    }
+    75% {
+        clip: rect(210px, auto, 39px, 210px);
+    }
+    80% {
+        clip: rect(0px, auto, 23px, 0px);
+    }
+    85% {
+        clip: rect(210px, auto, 39px, 210px);
+    }
+    90% {
+        clip: rect(25px, auto, 26px, 25px);
+    }
+    95% {
+        clip: rect(0px, auto, 39px, 0px);
+    }
+    100% {
+        clip: rect(27px, auto, 36px, 27px);
+    }
+}
+
+#img_di_cer0{
+    width: 50px;
+    position: absolute;
+    top: 70px;
+    left: 355px;
+}
+
+.neonText{
+    position: absolute;
+    font-family: Inter-Thin;
+    font-size: 14px;
+    top: 170px;
+    left: 38%;
+    height: 130px;
+    width: 50%;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 22px;
+    text-align: justify;
+}
+
+strong{
+    color: white;
+    text-shadow: 0px 0px 2px  #29f3c3,
+                 0px 0px 8px  #29f3c3,
+                 0px 0px 10px #29f3c3,
+                 0px 0px 20px #29f3c3,
+                 0px 0px 40px #29f3c3;
+}

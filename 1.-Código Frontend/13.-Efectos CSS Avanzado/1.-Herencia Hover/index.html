@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--El estilo y el manejo de la herencia de ids y clases se ve mejor en el archivo CSS, osea en style.css-->
+    <!--Se puede dar estilo a todo un tipo de elemento en general, como por ejemplo a los párrafos p-->
+    <p>Este es un párrafo sin ningún id</p>
+
+    <!--Además ya sé que puedo usar clases o id para dar un estilo específico a cada elemento-->
+    <p id="nombreId">
+        Este es un párrafo con id pero no está dentro de otro que tenga un id para poder hacer un hover diferente
+    </p>
+
+    <!--Además ya sé que puedo usar clases o id para dar un estilo específico a todos los elementos que se encuentren 
+    dentro de él, pero esto no funcionará cuando elelemento al que le estoy aplicando el id no es el correcto-->
+    <p id="nombreId">
+        <p>
+            Este es un párrafo dentro de otro párrafo con un id que se supone le debería permitir hacer un hover 
+            diferente pero como es otra etiqueta p, no le hará caso porque todas las etiquetas p hacen caso al 
+            estilo de los 1eros párrafos
+        </p>
+    </p>
+
+    <!--Además ya sé que puedo usar clases o id para dar un estilo específico a todos los elementos que se encuentren 
+    dentro de él, esto no funciona con todos los tipos de etiqueta, pero algunas con las que si funciona son las 
+    etiquetas div o section-->
+    <section id="nombreId">
+        <p>
+            Este es un párrafo dentro de un elemento con un id que le permite hacer un hover diferente
+        </p>
+    </section>
+
+    <!--Este es un div con una clase cuyo hover específicamente hace que las imagenes se vuelvan más transparentes, el 
+    hover de la imagen no se activará cuando me posicione encima del div pero el hover del div si se activará cuando 
+    me posicione encima de la imagen-->
+    <div class="nombreClass1">
+        <img src="oli.png" alt="oliCrayoli">
+    </div>
+
+    <!--Este es un div con una clase cuyo hover específicamente hace que las imagenes se vuelvan más transparentes y sus 
+    párrafos cambien de color de fondo, ni el hover del párrafo ni de la imagen se activará cuando me ponga encima del 
+    div pero el hover del div si se activará cuando me ponga encima del párrafo o de la imagen-->
+    <div class="nombreClass2">
+        <img src="oli.png" alt="oliCrayoli">
+        <p>Oli este es un párrafo que cambia de color</p>
+    </div>
+
+
+    <!--Todos estos conceptos son la herencia, en CSS la herencia solo se puede aplicar a elementos que son de una 
+    jerarquía abajo, osea la clase padre puede acceder a la clase hijo, pero no puede acceder a la clase sobrino o 
+    a clases de menor jerarquía, esto igual se puede aplicar con ids-->
+    <div class="nombreClassPadre">
+        <img class="nombreClassHijo" src="oli.png" alt="oliCrayoli">
+        <div>
+            <div class="nombreClassSobrino">
+                La herencia en CSS solo se puede accesar un nivel más abajo, no se puede 3, por eso esta 
+                clase sobrino no funciona
+            </div>
+            <p>
+                Oli este es un párrafo que cambia de color
+            </p>
+        </div>
+    </div>
+
+
+    <!--Esto por ejemplo se puede usar para hacer efectos con hover, este primero solo hace que aparezca un texto encima 
+    de una imagen y para que se vea mejor el texto hace que aparezca un fondo transparente-->
+    <div style="width: 20%; height: 40vh; display: flex; justify-content: center; align-items: center; background-image: url(oli.png); background-size: 100%; background-position: 50% 50%; background-repeat: no-repeat;">
+        <div class="card1">
+            <div class="card_text1">
+                <h3>
+                    Título texto
+                </h3>
+                <p style="font-size: 16px;">
+                    Se puede hacer el mismo efecto pero poniendo la imagen como fondo del div que tiene la clase padre
+                    y usar el div de la clase hijo para hacer el hover pero como podemos ver el hecho de poner la imagen
+                    como fondo hace que la calidad de la imagen se degrade mucho
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Estos últimos 2 hacen un efecto más complejo usando pseudoelementos ::before y ::after, para entender mejor este 
+    efecto debo irme a la explicación de la carpeta 2.-Efectos CSS, pero este es el resultado final de saber usar la 
+    jerarquía de herencia en CSS-->
+    <div style="width: 99.2%; height: 40vh; display: flex; justify-content: center; align-items: center; background-color: rgb(155, 153, 153); border: solid tomato 5px;">
+        <div id="card2">
+            <img style="max-width: 100%; display: block; display: flex; justify-content: center; align-items: center; z-index: -2;" src="pozoMiniConico.png" alt="olix2">
+            <section style="width: 100%; height: 40vh; background-color: rgba(73, 73, 73, 0.521); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <div style="width: 90%; height: 5vh; font-family: 'Fjalla One', sans-serif; font-size: 20px; letter-spacing: 1px; line-height: 80px; color: whitesmoke; text-align: center; margin: 0px; display: flex; justify-content: center; align-items: center;">
+                    DESCRIPCIÓN
+                </div>
+                <div style="width: 80%; height: 25vh; font-family: 'Open Sans', sans-serif; font-size: 15px; text-align: center; padding: 5%; margin: 0px;">
+                    <strong style="font-weight: bold;">Sistema monolítico prefabricado para proyectos de infraestructura como carreteras, puertos y aeropuertos</strong>. Disminuye la vibración en la rejilla cuando son instalados en zonas de tráfico a altas velocidades. 
+                </div>
+            </section>
+        </div>
+        <div id="card2">
+            <img style="max-width: 100%; display: block; display: flex;" src="oli.png" alt="olix2">
+            <section style="width: 100%; height: 40vh; background-color: rgba(0, 0, 0, 0.534); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <h1 style="font-family: 'Fjalla One', sans-serif; font-size: 20px; letter-spacing: 1px; line-height: 80px; color: whitesmoke; text-align: center; margin: 0px; display: block;">
+                    DESCRIPCIÓN
+                </h1>
+                <p style="font-family: 'Open Sans', sans-serif; font-size: 14px; text-align: justify; padding: 5%; margin: 0px; display: block;">
+                    El texto sigue marcandose en naranja por la primera instrucción que le había dado a todas las etiquetas de párrafo al
+                    inicio del documento html
+                </p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

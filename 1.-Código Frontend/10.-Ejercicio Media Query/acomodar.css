@@ -1,0 +1,82 @@
+.acomodar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 620px;
+}
+
+#arriba{
+  background-color: purple;
+  height: 150px
+}
+
+#enmedio{
+  height: 390px;
+  display:flex;
+  justify-content: space-between;
+}
+
+.cajones{
+width: 250px;
+display: flex;
+justify-content: space-around;
+}
+
+#deavarios{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+height: 200px;
+}
+
+.cajon{
+  background-color: blue;
+  height: 40px;
+}
+
+#foreveralone{
+  background-color: blue;
+  height: 380px;
+  width: 250px;
+  margin: 5px;
+}
+
+#abajo{
+  background-color: blue;
+  height: 80px;
+}
+
+@media only screen and (max-width:550px){
+
+  .cajones{
+  width: 350px;
+  display: flex;
+  justify-content: space-around;
+  }
+
+  #enmedio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #deavarios{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 150px;
+  }
+
+  .cajon{
+    background-color: blue;
+    height: 20px;
+  }
+
+  #foreveralone{
+    background-color: blue;
+    height: 150px;
+    width: 350px;
+    margin: 5px;
+  }
+
+}

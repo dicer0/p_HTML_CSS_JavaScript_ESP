@@ -1,0 +1,80 @@
+/*POSITION, TRANSFORM, BEFORE y AFTER*/
+body{
+    height: 90vh;
+    /*vh es una medida relativa a la altura de la pantalla donde se muestra el elemento, 100vh significa la altura de la 
+    pantalla completa, 50vh es la mitad de la pantalla y así respectivamente, es el equivalente a usar poncentaje pero 
+    para la altura de mis elementos*/
+    /*vw es una medida relativa al ancho de la pantalla donde se muestra el elemento*/
+    display: flex;
+    background-color: royalblue;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+/*Los pseudoelementos Before y After se declaran usando dos puntos de la siguiente manera :: después de indicar el 
+elemento CSS al que quiero que se aplique, aunque igual se puede poner con uno solo : porque así se hacía antes. 
+Los pseudoelementos sirven para agregar algún elemento estético antes o después del contenido de una etiqueta o div 
+al que lo estemos aplicando, estos elementos estéticos se mantendrán dentro del espacio de la etiqueta o div a menos 
+que específicamente use una etiqueta para que esto no sea así, el elemento before y after aparecerá solamente en las 
+etiquetas que tengan apertura y cierre porque dentro de estas etiquetas si existe un contenido de la etiqueta, como 
+en las etiquetas <div></div>, <p></p>, <h1></h1>, <body></body>, etc. Pero con las etiquetas que se cierran por sí 
+solas como <link> o <img> esto no sucederá y no se les puede agregar un before o after*/
+/*En este caso lo aplicaremos a las etiquetas p de párrafo*/
+p{
+    background-color: black;
+    color: blanchedalmond;
+}
+/*En este caso el pseudoelemento before se está aplicando a todas las etiquetas <p></p> de párrafo pero como vamos a 
+usar la instrucción position puede que no esté dentro del div de la etiqueta p*/
+p::before {
+    content: '';/*Si no existe la instrucción content dentro de ::before o ::after, no se mostrará nada en pantalla*/
+    background: red;
+    /*POSITION de CSS sirve para colocar un div o elemento y sus parámetros son los siguientes:
+    - static: Es el modo default y acomoda los elementos dependiendo del órden en el que estén creados en el documento 
+    HTML, metíendolos en un flujo de documentos (document flow) sin que éstos se puedan poner uno encima de otro, además
+    hace que ocupen la fila completa
+    
+    - relative: Funciona de la misma forma que static, pero permite mover el elemento empujándolo desde arriba, abajo, 
+    derecha o izquierda desde el punto donde se creó, siguiendo el órden en el que fue creado en el documento HTML, 
+    cuando yo haga esto, podré posicionar este elemento sobre los otros ya que éste no obedece el órden del document 
+    flow mientras que los demás elementos si lo hacen, además hace que los elementos también ocupen la fila completa.
+    El elemento que tenga este valor se tomará como punto de referencia para los elementos que sean position:absolute, 
+    esto implica que los elementos que tengan position:absolute se crearán encima de éste y lo tomarán como referencia 
+
+    - absolute: Funciona de la misma forma que relative permitiendo mover el elemento empujándolo desde arriba, abajo, 
+    derecha o izquierda desde el punto donde se creó, pero la diferencia con relative es que los demás elementos actuarán
+    como si éste nunca hubiera sido creado en el órden como se acomodaron los elementos siguiendo el document flow, por 
+    lo que se encimarán en él, además hace que el elemento absolute solo ocupe el espacio que necesita su contenido y no 
+    la fila completa.
+    Los elementos que sean position:absolute se acomodarán respecto a otro elemento que tenga un position:relative, esto 
+    implica que su punto de inicio desde donde lo puedo empujar hcon top, bottom, left y right es la esquina superior 
+    izquierda del elemento que tenga  position:relative, si ningún elemento es relative, se acomodará respecto al body
+    
+    - fixed: Es parecido a absolute pero el elemento siempre se acomoda respecto al body, osea a la pantalla del navegador
+    
+    - sticky: El elemento te sigue a donde vayas, se usa mucho para navbars
+    
+    Ya que haya elegido uno, puedo mover el elemento con las instrucciones top, bottom, left o right*/
+    position: fixed;
+    top: 200px;/*Esto indica la posición medida desde arriba donde se coloca el elemento*/
+    bottom: 400px;/*Esto indica la posición medida desde abajo donde se coloca el elemento*/
+    left: 490px;/*Esto indica la posición medida desde la izquierda donde se coloca el elemento*/
+    right: 850px;/*Esto indica la posición medida desde la derecha donde se coloca el elemento*/
+    /*Esto igual le dará su tamaño al elemento*/
+}
+/*En este caso el pseudoelemento after también se está aplicando a todas las etiquetas <p></p> de párrafo pero como no 
+vamos a usar la instrucción position el elemento que declaremos como after estará dentro del div de la etiqueta p*/
+p::after {/*En este caso el pseudoelemento after se está aplicando a todas las etiquetas <p></p> de párrafo*/
+    content: 'oli X2';/*El content puede ir vacío o no*/
+    background: green;
+    /*display: block; hace que el elemento se acomode como una fila completa abajo del contenido, pero si no existe
+    el elemento se acomodará a la derecha del contenido*/
+    font-size: 15px;
+    height: 20px;
+    display: block;/*Display block hace que el elemento se acomode como una fila completa arriba del contenido*/
+}
+ /*El uso de pseudoelements ::before y ::after hace que no tenga que crear divs vacíos para agregar estilo a mis divs 
+ o etiquetas*/
+
+ 

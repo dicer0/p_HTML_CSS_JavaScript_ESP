@@ -1,0 +1,8 @@
+{
+    "body":{
+        "edad" : 18,
+        "sexo" : "M",
+        "calificacionMedica": "Bien",
+        "sumaAsegurada": 1000000
+    }
+}

@@ -1,0 +1,87 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Transition se usa porque si hacemos una animación con hover simplemente, esta se ejecutará de manera instantánea, pero
+si queremos que ésta se haga de poquito a poquito, de una forma más sutil lo que podemos hacer es usar la propiedad 
+transition de CSS*/
+#turnOnIronman{
+    width: 30%; 
+    height: 400px;
+    border: 2px solid rgb(25, 80, 151);
+    background-image: url(ironmanOff.png); 
+    background-size: 60%; 
+    background-position: 50% 50%; 
+    background-repeat: no-repeat;
+    /*LA ETIQUETA TRANSITION SE METE DENTRO DEL ELEMENTO PRINCIPAL, NO DEL HOVER*/
+    /*transition-property sirve para especificar individualmente la transición de cada propiedad CSS quiero modificar 
+    posteriormente en el hover y así lograr por ejemplo que la transición de una propiedad sea más rápida o más lenta que 
+    la otra (algunas propiedades como background-image y background-size no se pueden manejar así y otras como border si), 
+    si pongo transition-property: all; todas las transiciones se manejarán en conjunto para todas las 
+    propiedades CSS*/
+    transition-property: all;
+    /*transition-duration sirve para indicar el tiempo que quiero que dure la transición*/
+    transition-duration: 3s;
+    /*transition-timing-function sirve para indicar la manera en la que quiero que se haga la transición:
+        ease: Especifica un efecto de transición con un inicio lento, luego rápido, luego finaliza lentamente 
+        (este es el modo predeterminado).
+        linear: Especifica un efecto de transición con la misma velocidad de principio a fin.
+        ease-in: Especifica un efecto de transición con un inicio lento.
+        ease-out: Especifica un efecto de transición con un final lento.
+        ease-in-out: Especifica un efecto de transición con un inicio y un final lentos.*/
+    transition-timing-function: ease;
+    /*transition-delay sirve para indicar cuanto tiempo debe estar el mouse encima del elemento para que se active la 
+    animación con el hover*/
+    transition-delay: 1s;
+    
+    /*Se debe copiar y pegar el código con un diferente prefijo para que corra en cada navegador diferente la etiqueta 
+    transition de CSS*/
+    /*El prefijo -webkit- sirve para que transition pueda correr en cualquier versión del navegador Google Chrome*/
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 3s;
+    -webkit-transition-timing-function: ease;
+    -webkit-transition-delay: 1s;
+    /*El prefijo -mox- sirve para que transition pueda correr en cualquier versión del navegador FireFox*/
+    -moz-transition-property: all;
+    -moz-transition-duration: 3s;
+    -moz-transition-timing-function: ease;
+    -moz-transition-delay: 1s;
+    /*El prefijo -o- sirve para que transition pueda correr en cualquier versión del navegador Opra*/
+    -o-transition-property: all;
+    -o-transition-duration: 3s;
+    -o-transition-timing-function: ease;
+    -o-transition-delay: 1s;
+}
+
+#turnOnIronman:hover{
+    background-image: url(ironmanOn.png), radial-gradient(white, rgb(66, 143, 245));
+    background-size: 60%, 100%; 
+    border: 2px solid rgb(8, 59, 126);
+}
+
+#turnOnIronman2{
+    width: 20%; 
+    height: 400px;
+    border: 2px solid rgb(25, 80, 151);
+    background-image: url(ironmanOff.png); 
+    background-size: 100%; 
+    background-position: 50% 50%; 
+    background-repeat: no-repeat;
+    /*LA ETIQUETA TRANSITION SE METE DENTRO DEL ELEMENTO PRINCIPAL, NO DEL HOVER*/
+    /*Si en vez de ponerlo todo de manera individual como en el ejemplo anterior, metemos todas las propiedades de la 
+    etiqueta transition las puedo especificar todas de jalón de la siguiente manera:
+        transition: property    duration    transition-timing-function  delay;
+    No se deben especificar todas las propiedades a fuerza, algunas se pueden dejar vacías y no pasa nada*/
+    transition: all 0.25s ease-out 0.1s;
+    /*También se deben especificar los prefijos para cada navegador pero ya solo debo copiar y pegar esta misma línea de 
+    código*/
+    -webkit-transition: all 0.25s ease-out 0.1s;/*Chrome*/
+    -moz-transition: all 0.25s ease-out 0.1s;/*FireFox*/
+    -o-transition: all 0.25s ease-out 0.1s;/*Opra*/
+}
+
+#turnOnIronman2:hover{
+    background-image: url(ironmanOn.png);
+    border: 2px solid rgb(183, 205, 235);
+}

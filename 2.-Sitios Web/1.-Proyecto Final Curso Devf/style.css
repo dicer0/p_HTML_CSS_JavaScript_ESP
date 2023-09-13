@@ -1,0 +1,487 @@
+/*Estilos de Moisés*/
+
+a {
+  color: inherit;
+}
+
+.account {
+	display: flex;
+	height: 35px;
+	margin-top: 28px;
+	justify-content: space-between;
+}
+
+#logo {
+	width: 110px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.head {
+	display: flex;
+	padding-left: 10px;
+	padding-right: 10px;
+	background: #FF8C00;
+	align-content: flex-end;
+  box-shadow: 10px 10px 5px grey;
+  justify-content: space-between;
+
+}
+
+.background-image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+
+#login {
+	background:#FF8C00;
+	color: rgba(255,255,255,0.7);
+	border-radius: 20px;
+	padding: 0px 10px;
+	padding-top: 2px;
+  padding-bottom: 2px;
+	margin:  0px 5px;
+  border: 2px solid #8B7A84;
+}
+
+#register {
+	background: #FF8C00;
+	color: rgba(255,255,255,0.7);
+	border-radius: 20px;
+	padding: 0px 10px;
+	padding-top: 2px;
+  padding-bottom: 2px;
+  margin:  0px 5px;
+  border: 2px solid #8B7A84;
+}
+
+#login:hover {
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.8);
+  background: #8B7A84;
+  color: white;
+}
+
+#register:hover {
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.8);
+  background: #8B7A84;
+  color: white;
+}
+
+.descripcion {
+  padding: 120px 150px;
+  background: rgba(255,255,255,0.8);
+}
+ .parrafo {
+  width: 300px;
+  font-size: 22px;
+ }
+
+.descripcion h3 {
+  color: #FF8C00;
+}
+
+/*.descripcion h3:hover {
+  text-decoration: underline;
+}*/
+
+
+.categoria {
+	color: white;
+	padding-top: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+  border-bottom: 4px #FF8C00 solid;
+}
+
+.categoria:hover {
+	background: orange;
+  border-bottom: 4px white solid;
+}
+
+.nav-bar {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.seccion1 {
+    background-image: url('images/landing_background_1.jpg');
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.seccion2 {
+    background-image: url('images/landing_background_2.jpg');
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.seccion3 {
+    background-image: url('images/landing_background_3.jpg');
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.seccion4 {
+    background-image: url('images/landing_background_4.jpg');
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.legales {
+  display: flex;
+  background: #2C1F1F;
+  height: 80px;
+  color: white;
+  font-size: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-between;
+}
+
+.info1 {
+  display: flex;
+  padding-top: 30px;
+}
+
+.info2 {
+  display: flex;
+  padding-top: 30px;
+  justify-content: flex-end;
+}
+
+.legal-link {
+  padding: 0px 10px;
+}
+
+.legal-link:hover {
+  color: orange;
+}
+ #copyright {
+  color: white;
+ }
+
+.legal-logo-container {
+  padding: 0px 60px;
+}
+
+#legal-logo {
+  height: 40px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.landingArea {
+  background-image: url('images/handyman-tools.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 750px;
+}
+
+.testigoNombre {
+  padding-right: 20px;
+}
+
+.landingText {
+  color: white;
+  text-align: center;
+  padding-top: 260px;
+  font-size: 66px;
+  line-height: 60px;
+  letter-spacing: 9px;
+}
+
+.landingSubText {
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 26px;
+  letter-spacing: 6px;
+}
+
+.bannerContainer img {
+  width: 100%;
+}
+
+.testimonioArea {
+  display: flex;
+  padding: 40px 20px;
+}
+
+.testimonio {
+  margin: 0px 30px;
+}
+
+.testigoNombre {
+  text-align: right;
+}
+
+.nosotrosContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #37343A;
+  padding: 40px 280px;
+  color: #FF8C00;
+}
+
+.nosotrosText p {
+  color: white;
+  font-size: 15px;
+  text-align: left;
+  font-size: 20px;
+  width: 800px;
+  padding-left: 80px;
+}
+
+.nosotrosTitle {
+text-align: center;
+}
+
+h3 {
+  letter-spacing: 1px;
+}
+
+/*Estilos de Erick*/
+
+.bordeprueba{
+  border: 1px solid black;
+}
+
+.chat{
+  width: 1200px;
+  height: 420px;
+	margin: 10px 10px 10px 30px;
+}
+
+.escribirmargen{
+		margin: 0px 50px 10px 10px;
+}
+
+.frog{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.espaciot{
+		margin: 25px 0px 20px 0px;
+		text-align: center;
+}
+
+.imagent{
+	border: 1px solid black;
+	width: 160px;
+	height: 210px;
+	margin: 10px 0px 10px 10px;
+}
+
+.tmueves{
+		margin: 0px 0px 0px -120px;
+}
+
+.rangot{
+		border: 1px solid black;
+		width: 560px;
+		height: 250px;
+		margin: 10px 0px 40px 130px;
+}
+
+.cuadrodeaceptacionono{
+	border: 1px solid black;
+	width: 160px;
+	height: 50px;
+	text-align: center;
+	margin: 160px 15px 10px 15px;
+}
+
+.fondoshido{
+	background-color: rgba(0, 0, 0, 0.3);
+	margin: 10px 0px 0px 10px;
+	border-radius: 50px;
+}
+
+.movert2{
+	margin: -150px 0px 0px 400px
+}
+
+.fondoshidobajo{
+	background-color: rgba(0, 0, 0, 0.3);
+	margin: 10px 0px 30px 10px;
+	border-radius: 50px;
+}
+
+.centrart{
+	display: flex;
+	justify-content: center;
+}
+
+.nombret{
+	border: 1px solid black;
+	width: 350px;
+	height: 30px;
+	margin: 10px 10px 0px 10px;
+}
+
+.izquierdat{
+	margin: 0px 0px 0px -160px;
+}
+
+.especialidadest{
+	border: 1px solid black;
+	width: 350px;
+	height: 170px;
+	margin: 10px 10px 10px 10px;
+}
+
+.conjuntot{
+	margin: 10px 10px 10px 10px;
+}
+
+.separaciont{
+	margin: 70px 200px 0px -170px;
+}
+
+.untitulo{
+	margin: 30px 0px 0px 240px;
+}
+
+
+/*Estilos de Abel*/
+
+.categorias{
+  text-align: center;
+}
+
+.CategoriasDetalladas{
+  text-align: left
+}
+
+.categorias img{
+  width: 75%;
+  height: 75%;
+  border-radius: 45px;
+}
+
+.boton{
+  background-color: orange;
+  text-align: center;
+
+}
+
+.contenedor{
+  border-bottom: solid grey;
+}
+
+.contenedor2{
+	background-color:#8B7A84;
+	color: orange;
+}
+
+.emocion{
+  border-bottom: solid grey;
+  justify-content: center;
+}
+
+.emocion img{
+  width: 70%;
+  height: 70%;
+}
+
+#comentarios{
+  border: solid grey;
+}
+
+.Reloj{
+  display: flex;
+  justify-content: center;
+}
+
+.Reloj img{
+	height: 250px;
+}
+
+.Logo img{
+  width: 45%;
+  height: 45%;
+}
+
+.Mensaje{
+  text-align: center;
+}
+
+.Logo img{
+  width: 45%;
+  height: 45%;
+}
+
+.Rastreo{
+  display: flex;
+  justify-content: center;
+}
+
+
+.Rastreo img{
+  width: 75%;
+  height: 75%;
+}
+
+.AnuncioRastreo{
+  text-align: center;
+}
+
+.HoraRastreo{
+  background-color: grey;
+  color: orange;
+  text-align: center;
+}
+
+.Logo img{
+  width: 45%;
+  height: 45%;
+}
+
+#comentarios{
+  border: solid grey;
+}
+
+.separador{
+	height: 100px;
+}
+
+.ReporteTecnico img{
+	width: 95%;
+	height: 95%;
+}
+
+
+p{
+	text-align: center;
+  font-size: 60px;
+  margin-top:0px;
+	color:red;
+}
+/*Estilos de Lucero*/
+.subtitulos{
+	text-align: center;
+	font-size: 200%;
+	color: rgb(55, 52, 58);
+}
+.cotizacion1{
+	text-align: center;
+	margin: 0px 0px 0px 450px;
+	font-size: 200%;
+	color: rgb(55, 52, 58);
+}
+
+.cate{
+	text-align: center;
+	margin: 0px 0px 0px 450px;
+	font-size: 200%;
+	color: rgb(55, 52, 58);
+}

@@ -1,0 +1,11 @@
+input[type=text]{
+  background-color: red;
+}
+/*esto de poner [type=text] hace que solo me afecte los
+inputs de tipo text*/
+/*tener cuidado con que no haya espacios entre input y
+los corchetes, osea esto: input [type=text]*/
+select{
+  background-color: purple;
+}
+/*poner labels a los checkbox*/

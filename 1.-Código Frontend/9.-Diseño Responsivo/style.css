@@ -1,0 +1,28 @@
+/* otra forma de poner comentarios es poniendo
+control+flechita arriba+slash que esta alado del bloq num */
+.contenido{
+    font-size: 86px; /*Esto me da el tamaño de mi letra*/
+    color: red; /*Esto me da el color de mi letra*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.cubo{
+  width: 300px;
+  height: 300px;
+  background-color: pink;
+  margin: 5px;
+}
+
+/*Esto e lo nuevo que es el media query*/
+@media only screen and (max-width: 900px) {
+  /*Dentro del media querie*/
+.contenido{
+  color: green;
+  background: yellow;
+  padding: 50px;
+}
+/*Esto hace que cuando la pantalla sea de 900 px o menos,
+las condiciones de mi clase contenido cambiaran y mi letra
+sera verde*/
+}

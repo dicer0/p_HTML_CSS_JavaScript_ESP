@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Grid de bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--Para usar bootstrap debo jalar las carpetas de css y js a mi archivo-->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+<div class="container-fluid">
+  <!--Esto es para que todo este pegado a la pantalla sin dejar espacios en
+  los lados-->
+  <div class="row">
+    <!--Se debe poner la clase row a el div que contiene todo lo demas para que
+    se respete lo que dijimos de las 12 columnas, y crea una sola linea-->
+    <div class=" col-lg-6" id="azul">
+      Hola
+    </div>
+    <div class="col-xl-6" id="rojo">
+      Hola
+    </div>
+    <!--Lo unico que cambia cuando pongo lg o xl es que al ser responsive cambie
+    en diferentes puntos-->
+    <!--Es importante que la suma de las cols de 12-->
+    </div>
+  <div class="row">
+    <div class="col-sm-3">A</div>
+    <div class="col-sm-3">B</div>
+    <div class="col-sm-3">C</div>
+    <div class="col-sm-3">D</div>
+  </div>
+</div>
+  </body>
+</html>

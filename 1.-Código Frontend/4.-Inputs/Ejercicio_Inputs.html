@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="icon" href="icon.gif" type="image/gif" sizes="16x16">
+  <!--Con esto pongo el icono que va en la parte de arriba de mi pagina web
+  puedo ver que se pone con un link, pero en rel pongo icon en ves de stylesheet,
+  con href llamo a mi archivo css y en type le indico que tipo de archivo voy a
+  meter y como es una imagen gif, le pongo image/gif, con sizes le doy tamaño al
+  icono-->
+  <meta charset="utf-8">
+  <title>Google</title>
+  </head>
+    <body>
+      <p> Ejemplo </p>
+      <!--Si quiero que mis textos aparezcan de la manera en que yo la pongo
+      aqui dentro de mi codigo debo ponerlos dentro de un <p></p>, esto pasara
+      aun si le meto links u otras cosas-->
+      <form>
+      <!--Es la interaccion entre humano y maquina en donde podemos poner un input o
+      cualquier tipo de informacion-->
+      <!--No es necesario poner la etiqueta form para poner inputs pero este se usa
+      para agrupar los inputs y que esten mejor organizados-->
+        <input type="text" name="buscatl" value="" placeholder="introduce tu choro"/>
+        <!--esto me muestra una barra donde puedo introducir texto u otras cosas, hay
+        otros muchos otros tipos de input en donde se pueden introducir diferentes
+        cosas, estos se especifican en el atributo type, el nombre es para diferenciar
+        los diferentes input (es recomendable poner un nombre claro y en ingles), en value
+        ponemos lo que dira dentro del form por default (este sera un texto real),
+        con placeholder igual pondremos lo que dirá dentro del input pero este no sera
+        tomado como texto.-->
+        <!--El name es un parametro mientras que el value sera o un texto o un numero
+        el codigo por default lo convertira en lo que necesite ser despues cuando use
+        javascript-->
+        <input type="submit" name="boton" value="Boton"/>
+        <!--
+        En concluision:
+        type: Es para especificar el tipo de elemento que se pondra introducir en el
+        input
+        name: Es para diferenciar los diferentes inputs entre si
+        value: Es lo que habra dentro del input que sera un texto real
+        placeholder: Es lo que dira dentro del input pero no sera texto real
+        -->
+      </form>
+      <p> Google </p>
+      <form action="http://www.google.com/search">
+        <!-- el parametro action lo que hace es que nuestro form interaccione con una
+        url-->
+        <input type="text" name="q" value="que pedotl" placeholder="introduce tu choro"/>
+        <!--En este input podemos introducir texto-->
+        <input type="submit" name="" value=";_;"/>
+        <!--Con este input mandamos toda la informacion que haya dentro de mi form-->
+      </form>
+      <p> Youtube </p>
+      <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query" value="" placeholder="introduce tu choro para buscar en youtube"/>
+        <input type="submit" name="boton" value="Boton"/>
+      </form>
+      <p> Yahoo </p>
+      <form action="https://mx.search.yahoo.com/search">
+        <input type="text" name="p"/>
+        <input type="submit" placeholder="Boton"/>
+      <!--el placeholder en el input de tipo submit no hace nada-->
+      </form>
+    </body>
+</html>

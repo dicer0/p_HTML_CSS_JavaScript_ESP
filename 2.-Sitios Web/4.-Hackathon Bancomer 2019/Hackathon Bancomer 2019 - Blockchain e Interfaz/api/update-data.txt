@@ -1,0 +1,8 @@
+{
+    "body":{
+        "tasa": 0.05,
+        "gastosPPrima": 530,
+        "gastosXX": 200,
+        "gastosSA": 0.00075
+    }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/blockvisionlogo.png" type="image" sizes="16x16">
+    <title>Inicio de Sesión</title>
+</head>
+<body>
+    
+    <div style="height: 750px; width: 100%; background-image: linear-gradient(to bottom right, rgb(2, 60, 187), rgba(255,255,255,0.2)), url(img/1540583250738.jpeg); background-position: 50% 100%, 50% 100%; background-size: 100%, 100%; background-repeat: no-repeat, no-repeat; display: flex; justify-content: center; align-items: flex-start;">
+        <div style="width:98.4%; height: 725px; margin: 10px; border: 1px solid #f7931a;">
+            <!-- Empieza la barra de navegación -->
+            <div style="background-color: rgba(0,0,0,0);height: 125px; width: 100%; display:flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                <div style="height: 100px; width: 20%; margin-left: 30px; display: flex; justify-content: center; align-items: center; margin-top: 50px;">
+                    <img src="img/blockvisionlogo.png" alt="logo" style="width: 250px;">
+                </div>
+                <div style="height: 60px; width: 50%; display: flex; align-items: center; justify-content: flex-end;">
+                    <a href="index.html" class="navbarElements" style="text-decoration: none;">
+                        <div>
+                            Regresar
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Termina la barra de navegación -->
+            <!-- Empieza título seguros -->
+            <div style="width: 100%; height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <div style="color: white; text-align: center; width: 50%; font-family: 'Open Sans Condensed', sans-serif; font-family: 'News Cycle', sans-serif; font-size: 60px;">
+                    BIENVENIDO
+                </div>
+                <div style="height: 1px; background-color: white; width: 10%;"></div>
+            </div>
+            <!-- Termina título seguros -->
+            <!-- Empieza categoría de seguros -->
+            <div style="width: 100%; height: 400px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;">
+                <div style="background-color: rgba(0,0,0,0.4); width: 380px; height: 330px; border: solid 3px white; border-radius: 10px; margin: 10px; display: flex; flex-direction: column; justify-content: space-around; align-items: center;">
+                    <div style="width: 100%; height: 70px; display: flex; flex-direction: column; align-items: center;">
+                        <div style="color: white; text-align: center; width: 50%; font-family: 'Open Sans Condensed', sans-serif; font-family: 'News Cycle', sans-serif; font-size: 15px;">
+                            PARA INGRESAR INTRODUZCA SU CORREO Y CONTRASEÑA
+                        </div>
+                        <div style="height: 1px; background-color: white; width: 10%; margin-top: 10px;"></div>
+                    </div>
+                    <div style="width: 100%; height: 150px; display: flex; flex-direction: column; align-items: center;">
+                        <form action="">
+                            <p class="textoDatos" style="width: 300px; font-size: 17px; border: none;">Correo</p>
+                            <input type="email" placeholder="" style="width:300px;">
+                            <p class="textoDatos" style="font-size: 17px; border: none;">Contraseña</p>
+                            <input type="password" placeholder="" style="width:300px;">
+                        </form>
+                    </div>
+                    <div style="width: 100%; height: 50px; display: flex; justify-content: center; align-items: center;">
+                        <a href="PagoPoliza.html" style="text-decoration: none; height: 35px; width: 40%;" class="navbarElements" >
+                            <div>
+                                Ingresar
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Termina categoría de seguros -->
+        </div>    
+    </div>
+    <!-- Empieza Div con la barra de legales -->
+    <div style="width: 100%; height: 150px; background-color: #322f3a; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 90%; height: 125px; display: flex; justify-content: space-around; flex-direction: row; align-items: center; border-top: solid 1px white;">
+            <div style="height: 100px; width: 60%; display: flex; align-items: center; justify-content: center;">
+                <p Class="legalElements">
+                    © Block_vision Project 2019-∞ Publicado en Hackathon Bancomer 2019
+                </p>
+            </div>
+            <div style="height: 100px; width: 20%; display: flex; align-items: center; justify-content: center;">
+                <img src="img/blockvisionlogo.png" alt="logo" style="width: 150px;">
+            </div>
+            <div style="height: 100px; width: 10%; display: flex; justify-content: center; align-items: center;">
+                <img src="img/images (3).jpg" alt="logo" style="width: 100px;">
+            </div>
+        </div>
+    </div>
+    <!-- Termina Div con la barra de legales -->
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <!-- Include all compiled plugins (below), or include individual files as needed -->
+     <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/truffle-contract@3.0.6/dist/truffle-contract.min.js"></script>
+     <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+#cositas{
+  color: darkgray;
+}
+
+.button{
+  background-color: tomato;
+  color: white;
+  width: 110px;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.button:hover{
+  border-style: hidden;
+  background-color: black;
+  border: 2px solid Lightgrey;
+}

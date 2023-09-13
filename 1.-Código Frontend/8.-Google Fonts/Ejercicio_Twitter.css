@@ -1,0 +1,94 @@
+/*Tratar de ponerle como nombre a todos los archivos de css
+como style, lo he estado haciendo mal*/
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+/*Con esto selecciono una fuente que quiera usar y la encuentro
+en la pagina de google-fonts*/
+body{
+  font-family: "Lato" /*tambien le debo poner el nombre de la fuente
+  que estoy importando de google-fonts*/sans-serif;
+  /*todos los divs por default tienen un margin y un padding diferente
+  a cero, por lo tanto debo cambiar eso dentro del body para que afecte
+  a todos los divs*/
+  margin: 0px;
+  padding: 0px;
+  /*Al body se le debe dar padding y margin de 0px para que todos los
+  divs que ponga esten pegados a las esquinas de la pagina, sino siempre
+  habra un pequeño espacio en medio*/
+}
+
+#navbar{
+border-bottom: 1px solid grey;
+box-shadow: 0px /*Esto lo mueve en "x"*/ 3px /*Esto lo mueve en "y"*/
+            5px /*Esto es cuanto se dispersa desde donde puse mi shadow*/
+/*Esto es para el color de la sombra*/ rgba(0,0,0,0.1);
+height: 50px; /*Debo siempre recordar poner las unidades (pixeles=px)*/
+display: flex; /*Esto se pone para poder usar flexbox y siempre se pone
+              en el div mas grandote que contiene a los otros
+              Por default te pone los divs en renglon al poner
+              display: flex; para mover los nav-section*/
+justify-content: center;
+background-color: yellow;
+}
+/*Es una id normal que estoy creando*/
+
+.nav-section{
+background-color: white;
+width: 400px; /*con esto cambio la anchura de todos los divs*/
+/*display: flex;
+justify-content: space-between;
+Asi para mover los section, se hace del grande a los
+chiquitos de adentro, pero como no quiero que todos se acomoden asi
+creo mejor un id que se aplique al div grande*/
+}
+
+#sections{
+  display: flex;
+  justify-content: space-between;
+}
+
+.section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.section:hover/*Con esto se crea un efecto de cuando paso por encima
+              el mouse*/{
+color: blue;
+border-bottom: 3px solid blue;
+}
+
+#logo{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+/*Este id se le puso al div grandote para que moviera a los chiquitos*/
+
+#logo img{
+  height: 40px;
+  /*Cuando se modifica un lado de alguna imagen con pixeles, lo demas
+  se modifica por si solo*/
+}
+/*Esto se le puso al div chiquito para modificar lo de dentro del div
+o los divs chiquitos que estan dentro del grandote*/
+/*Esto hace que se modifiquen todas las imagenes dentro del div con el
+id de logo*/
+
+#controls{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+/*Este id se le puso al div grandote para que moviera a los chiquitos*/
+#search-box{
+border: 2px solid blue;
+height: 70%;
+width: 160px;
+background: white;
+border-radius: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+}

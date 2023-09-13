@@ -1,0 +1,20 @@
+body{
+  background-image: url("mapa.jpg");
+  background-size: 900px 600px;
+  background-position: 50% 20px;
+  background-repeat: no-repeat;
+}
+
+.button{
+  background-color: tomato;
+  color: white;
+  font-size: 20px;
+  width: 200px;
+  text-align: center;
+  border: 2px groove lightgrey;
+}
+
+.button:hover{
+  background-color: black;
+  border: 2px groove grey;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--Tratar de ponerle como nombre a todos los archivos principales
+el nombre de index, lo he estado haciendo mal-->
+<html>
+  <head>
+    <link rel="stylesheet" href="Ejercicio_Twitter.css"/>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="navbar">
+    <!--Aqui estoy usando los id y las clases para darle nombre e
+    identidad a cada div, cuando son unicos uso id y cuando se
+    puede repetir el estilo uso clases
+    El chiste aqui es identificar cuales divs se van a comportar
+    similar y cuales no-->
+      <div class="nav-section" id="sections">
+        <div class="section">Inicio</div>
+        <div class="section">Momentos</div>
+        <div class="section">Notificaciones</div>
+        <div class="section">Mensajes</div>
+      <!--Como todos los divs tenian las mismas propiedades usamos una
+      clase para modificarlos-->
+      <!--Cuando tengo varios divs dentro de otro grande es
+      recomendable acomodarlos asi como se ve arriba para no hacerme
+      bolas y visualizarlos mejor; el div mas grande se llama div
+      contenedor-->
+      </div>
+      <div class="nav-section" id="logo">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=494x10000:format=png/path/scf4fcb377503c035/image/i6fbc6549edc192d0/version/1410718461/image.png" alt="">
+      </div>
+      <div class="nav-section" id="controls">
+        <div id="search-box">
+          <form>
+            <input type="text" placeholder="Busca en twitter"/>
+          </form>
+        </div>
+        <div id="profile-link">C2</div>
+        <div id="tweet-button">C3</div>
+      </div>
+    </div>
+  </body>
+</html>

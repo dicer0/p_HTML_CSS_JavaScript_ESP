@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=News+Cycle|Open+Sans+Condensed:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Anton|Lobster');
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Gayathri:100,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbarElements{
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 45px; 
+    width: 20%; 
+    margin: 15px; 
+    color:white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 10px;
+}
+
+.navbarElements:hover{
+    background-color: white;
+    color:#322f3a;
+    box-shadow: 5px 10px 20px #322f3a;
+    font-weight: bolder; 
+}
+
+.legalElements{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    color:white;
+    font-size: 17px;
+}
+
+.textoDatos{
+  font-family: 'Open Sans Condensed', sans-serif; 
+  font-family: 'News Cycle', sans-serif;
+  color: white;
+  font-size: 29px;
+  margin-bottom: 0px;
+  border-bottom: 1px solid white;
+  width: 250px;
+}
+
+.lineaDecorativa{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
+.lineaDecorativa::after,.lineaDecorativa::before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #322f3a;
+    top:40px;
+}
+
+.lineaDecorativa::before{
+    left:-0px;
+}
+
+.lineaDecorativa::after{
+    right:-0px;
+}
+
+.titulo{
+    font-weight: bold;
+    font-size: 65px;
+    font-family: 'Poppins', sans-serif; 
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+#romboRegistro{
+    width: 360px;
+    height: 360px;
+    margin-right: 100px;
+    margin-top: 128px;
+    transform: rotate(45deg);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.contenidoRombo{
+    width: 33.3333%;
+    height: 116.6666px;
+    background-color: rgba(0,0,0,.5);
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.contenidoRomboE{
+    width: 33.3333%;
+    height: 116.6666px;
+    background-color: black;
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.textoBienvenida{
+    font-family: 'Raleway', sans-serif;
+    transform: rotate(315deg);
+    color:white;
+    font-size: 19px;
+}

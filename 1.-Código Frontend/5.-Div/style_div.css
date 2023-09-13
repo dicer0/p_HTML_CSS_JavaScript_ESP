@@ -1,0 +1,40 @@
+body{
+background-color: yellow;
+color: purple;
+}
+
+div{
+  background-color: blue;
+  color: white;
+  /*border: red 1px solid;
+  asi se ponen en css igual los border poniendo todas
+  sus caracteristicas por separado*/
+  border-color: red;
+  border-width: 2px;
+  border-style: solid;
+  /*asi se pone cada parametro de forma individual para
+  el borde*/
+  width: 50px;
+  /*height: 50px;*/
+  /*con estos dos se cambia el ancho(width) y el largo(height)*/
+  height: 50%; /*asi se pone en porcentaje que mide desde toda
+  la pantalla osea que toda la pantalla es el 100 % y esto se
+  puese hacer tanto con width como con height*/
+  padding: 10px;
+  /*con padding aumento el tamaño que hay entre la imagen y/o
+  el texto dentro del div hacia el borde que esta marcado por el
+  border*/
+  margin: 10px/*arriba del div*/ 20px/*derecha del div*/
+  30px /*abajo del div*/ 50px/*izquierda del div*/;
+  /*con el margin cambio el espacio que hay entre divs, a cada
+  elemento lo puedo poner en un div y asi manipularlos, tiene
+  un orden en sentido de las manecillas del reloj*/
+}
+
+.caja{
+  width: 70px;
+  height: 45;
+  /*Important: When you set the width and height properties of an element with
+  CSS, you just set the width and height of the content area. To calculate the
+  full size of an element, you must also add padding, borders and margins.*/
+}

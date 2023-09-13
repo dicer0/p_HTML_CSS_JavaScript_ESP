@@ -1,0 +1,284 @@
+/* First Row (Header) */
+.header{
+  background-color: beige;
+}
+
+#access{
+  width: 60%;
+}
+
+/* Main image container */
+#mic{
+  background-image: url(///Users/abelmendiola/Desktop/Escritorio/Devf/Proyecto906Bootstrap/images/Fondo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: beige;
+  width: 100%;
+  height: 300px;
+}
+
+#signM{
+  font-size: 10px;
+}
+
+#Meet_img img{
+  width: 100%;
+}
+
+.sending{
+  display: flex;
+}
+
+#SocialNets{
+  justify-content: center;
+}
+
+/* ends Main Image Container */
+
+#space{
+  height: 20px;
+}
+
+.coltoline{
+  display: flex;
+  justify-content: space-between;
+}
+
+.miniComment{
+  font-size: 12px;
+}
+
+.fbc{
+  background-color: beige;
+}
+
+.Booksline{
+  display: flex;
+  justify-content: space-between;
+  padding: 1px;
+  margin: 1px;
+}
+
+.Booksline img{
+  width: 90%;
+}
+
+#finder{
+  border: 2px solid black;
+  border-radius: 5%;
+}
+
+#finder input[type=text]{
+  border: 0px;
+}
+
+.list{
+  display: flex;
+}
+
+.LoveListContainer{
+  display: flex;
+  border-bottom: 1px solid black;
+  margin-top: 3px;
+}
+
+.TextLLC{
+    font-size: 10px;
+}
+
+.booksInLLC{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.booksInLLC img{
+  width: 80%;
+}
+
+.programmsButtons{
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+  width: 50%;
+  margin: 5px;
+  padding: 5px;
+  border: 5px;
+}
+
+.programmsButtons input[type=submit]{
+  font-size: 12px;
+}
+
+#QuotesContainer{
+  display: flex;
+}
+
+#quotes{
+  width: 70%;
+}
+
+#quotes img{
+  width: 90%;
+}
+
+#QuotesList{
+  width: 30%;
+  height: 70%;
+}
+
+.BLF{
+  display: flex;
+}
+
+.BLF img{
+  width: 90%;
+}
+
+.Awards{
+  display: flex;
+}
+
+
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 600px){
+  /* First Row (Header) */
+  .header{
+    flex-direction: column;
+  }
+
+  #access{
+
+  }
+
+  /* Main image container */
+  #mic{
+    flex-direction: column;
+  }
+
+  #signM{
+
+  }
+
+  #Meet_img img{
+
+  }
+
+  .sending{
+    display: flex;
+  }
+
+#SocialNets{
+  flex-direction: column;
+}
+
+  /* ends Main Image Container */
+
+  #space{
+    flex-direction: column;
+    height: 120px;
+  }
+
+
+/* starts left Container */
+  .coltoline{
+    flex-direction: column;
+  }
+
+  .miniComment{
+    font-size: 12px;
+  }
+
+  .fbc{
+    background-color: beige;
+  }
+
+  .Booksline{
+    display: flex;
+    justify-content: space-between;
+    padding: 1px;
+    margin: 1px;
+  }
+
+  .Booksline img{
+    width: 90%;
+  }
+
+  #finder{
+    border: 2px solid black;
+    border-radius: 5%;
+  }
+
+  #finder input[type=text]{
+    border: 0px;
+  }
+
+  .list{
+    display: flex;
+  }
+
+  .LoveListContainer{
+    display: flex;
+    border-bottom: 1px solid black;
+    margin-top: 3px;
+  }
+
+  .TextLLC{
+      font-size: 10px;
+  }
+
+  .booksInLLC{
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .booksInLLC img{
+    width: 80%;
+  }
+
+  .programmsButtons{
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+    width: 50%;
+    margin: 5px;
+    padding: 5px;
+    border: 5px;
+  }
+
+  .programmsButtons input[type=submit]{
+    font-size: 12px;
+  }
+
+  #QuotesContainer{
+    display: flex;
+  }
+
+  #quotes{
+    width: 70%;
+  }
+
+  #quotes img{
+    width: 90%;
+  }
+
+  #QuotesList{
+    width: 30%;
+    height: 70%;
+  }
+
+  .BLF{
+    display: flex;
+  }
+
+  .BLF img{
+    width: 90%;
+  }
+
+  .Awards{
+    display: flex;
+  }
+
+
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Condicionales</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <input type="text" id="Edad">
+    <!--Para usar javascript siempre se usan las id, por eso es importante no
+    usar la misma id en diferentes elementos-->
+    <select id="operador">
+      <option value="suma">+</option>
+      <option value="resta">-</option>
+      <option value="multipicacion">*</option>
+      <option value="division">/</option>
+    </select>
+    <!--Esto era para hacer un menu de opciones-->
+    <div class="button" onclick="operadores()"}>
+    <!--Dentro de los parametros del div es donde se pone el onclick que llamara
+    a mi archivo java script dentrp del cual debo poner el nombre de la funcion
+    que quiero usar-->
+      RUN
+    </div>
+
+    <script type="text/javascript" src="action.js">
+    /*Al igual que para llamar a mi archivo css se usa el link y href para
+    llamar a mi archivo js se pone src pero este se pone dentro de la etiqueta
+    script como parametro*/
+
+    </script>
+    <!--Siempre se debe poner el script al final de nuestro body para evitar
+    problemas de sintaxis-->
+  </body>
+</html>
