@@ -14,4 +14,4 @@ And this specific repository contains documentation about the HTML, CSS and Java
 <br/>
 &nbsp;
 
-[![HTML, CSS & JavaScript](http://dicer0.com/wp-content/uploads/2024/02/p_JavaScript.png)](https://dicer0.com/#skills)
+[![HTML, CSS & JavaScript](http://dicer0.com/wp-content/uploads/2024/04/p_HTML_CSS_JavaScript.png)](https://dicer0.com/#skills)
